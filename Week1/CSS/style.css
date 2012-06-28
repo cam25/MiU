@@ -64,12 +64,13 @@ img.displayed{
 	padding-top:5px;
 	width:300px;
 	height: 150px;
-	
-	
-	
-	
+
 }
 
+img#construct{
+	height:20px;
+	
+}
 a#addEvent{
 
   display: inline-block;
