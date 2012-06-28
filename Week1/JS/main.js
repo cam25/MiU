@@ -405,20 +405,18 @@ window.addEventListener("DOMContentLoaded", function () {
             for (var i = 0, j = localStorage.length; i < j; i++) {
                 var key = localStorage.key(i);
                 var vals = localStorage.getItem(key);
-                var items = JSON.parse(vals);
+                var item = JSON.parse(vals);
                 var catLi = document.createElement("li");
                 makeList2.appendChild(catLi);
-                if (category === items.group[1]) {
-                    for (var n in items) {
+                if (category === item.group[1]) {
+                    for (var n in item) {
                         var subCatLi = document.createElement("li");
-                        var subText = items[n][0] + "  " + items[n][1];
+                        var subText = item[n][0] + "  " + item[n][1];
                         makeList2.innerHTML = subText;
 
 
 
                     }
-
-
                 }
 
             }
@@ -426,7 +424,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
         //By term
-        if (term !== "" && category === "--Choose A Catagory--") {
+        if (term !== "") {
             for (i = 0, j = localStorage.length; i < j; i++) {
                 var key = localStorage.key(i);
                 var vals = localStorage.getItem(key);
