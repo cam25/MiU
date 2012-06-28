@@ -1,7 +1,7 @@
-//Project 4    
+//Project 1    
 //Cameron Mozie
-//Visual Framworks Week4 Project 4
-//VFW1206
+//MiU
+//MiU1206
 window.addEventListener("DOMContentLoaded", function () {
 
 
@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     //create select field element and populate with options.
     function makeCats() {
-        var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower","Concert","Movies","KidsEvent","DinnerParty","RoadTrip","SportingEvent","BookSigning"];
+        var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower", "Concert", "Movies", "KidsEvent", "DinnerParty", "RoadTrip", "SportingEvent", "BookSigning"];
         var formTag = document.getElementsByTagName("form"),
             //form tag is array 
             selectLi = $("chooseCat"),
@@ -162,9 +162,9 @@ window.addEventListener("DOMContentLoaded", function () {
         $("range").value = item.iq[1];
 
         if ($("Monday").value == item.checkBox[1]) {
-	        $("Monday").setAttribute("checked", "checked");
-	        }
-        
+            $("Monday").setAttribute("checked", "checked");
+        }
+
 
         if ($("Tuesday").value == item.checkBox[1]) {
             $("Tuesday").setAttribute("checked", "checked");
@@ -296,7 +296,7 @@ window.addEventListener("DOMContentLoaded", function () {
             return false;
         }
     }
-    
+
     function validate(event) {
         //define elements we want to check
         var getGroup = $("groups");
@@ -410,12 +410,12 @@ window.addEventListener("DOMContentLoaded", function () {
                 makeList2.appendChild(catLi);
                 if (category === items.group[1]) {
                     for (var n in items) {
-                    var subCatLi = document.createElement("li");
-                    var subText = items[n][0] + "  " + items[n][1];
-                    makeList2.innerHTML = subText;
-                    
-                    
-                       
+                        var subCatLi = document.createElement("li");
+                        var subText = items[n][0] + "  " + items[n][1];
+                        makeList2.innerHTML = subText;
+
+
+
                     }
 
 
@@ -424,20 +424,21 @@ window.addEventListener("DOMContentLoaded", function () {
             }
         }
 
+
         //By term
         if (term !== "" && category === "--Choose A Catagory--") {
             for (i = 0, j = localStorage.length; i < j; i++) {
                 var key = localStorage.key(i);
                 var vals = localStorage.getItem(key);
                 var itemz = JSON.parse(vals);
-                var sublist = document.createElement("li")
+                
                 for (n in itemz) {
                     if (itemz[n][1].indexOf(term) != -1) {
                         for (var q in itemz) {
                             console.log(itemz[q][1]);
-                            console.log()
-                           
-                            
+
+
+
                         }
                     }
                 }
@@ -454,7 +455,7 @@ window.addEventListener("DOMContentLoaded", function () {
                 for (n in itemz) {
                     if (itemz[n][1].indexOf(term) != -1) {
                         for (q in itemz) {
-                            console.log(itemz[q][1]);							
+                            console.log(itemz[q][1]);
                         }
                     }
                 }
@@ -466,6 +467,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     makeCats();
+    
 
     var displayLink = $("displayStoredData");
     displayLink.addEventListener("click", getData);
