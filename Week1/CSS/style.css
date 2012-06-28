@@ -91,7 +91,7 @@ a#addEvent{
   background: #c50503; 
   background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
   background: -moz-linear-gradient(top, #ff8a50 0%, #c30000 100%);
-  width: 235px;
+
   
  
   
@@ -100,7 +100,36 @@ a#addEvent{
   
 	
 }
+a#browseButton{
 
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 15px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .2em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  color: #fffbf9;
+  border: solid 1px #980401;
+  background: #c50503; 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -moz-linear-gradient(top, #ff8a50 0%, #c30000 100%);
+  
+  
+ 
+  
+  
+  
+  
+	
+}
 
 
 
