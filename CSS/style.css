@@ -52,14 +52,25 @@ p{
 	font-family: "Footlight MT Light";
 	color: #fdfdfd;
 	font-style: bold;
+	text-indent: 5px;
+	padding-top: 8px;
+	padding-left: 5px;
+	padding-right: 2px;
+}
+
+
+img.displayed{
+	padding-top:5px;
+	width:300px;
+	height: 100px;
+	
 	
 	
 }
 
-
-
 a#addEvent{
-	 display: inline-block;
+
+  display: inline-block;
   outline: none;
   cursor: pointer;
   text-align: center;
@@ -77,11 +88,19 @@ a#addEvent{
   border: solid 1px #980401;
   background: #c50503; 
   background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
-  background: -moz-linear-gradient(top, #ff8a50, #c30000);
-  width: 80px;
+  background: -moz-linear-gradient(top, #ff8a50 0%, #c30000 100%);
+  width: 235px;
+ 
+  
+  
+  
   
 	
 }
+
+
+
+
 
 a#clearStoredData{
   display: inline-table;
@@ -101,7 +120,7 @@ a#clearStoredData{
   color: #fffbf9;
   border: solid 1px #980401;
   background: #c50503; 
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a4f), to(#c30000)); 
   background: -moz-linear-gradient(top, #ff8a50, #c30000);
   
   
@@ -144,7 +163,7 @@ input#searchButton:hover   {color:#0016ff;}
 
 
 
-input#browseButton{
+a#Entertainment{
 	display: inline-block;
   outline: none;
   cursor: pointer;
@@ -164,11 +183,81 @@ input#browseButton{
   background: #c50503; 
   background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
   background: -moz-linear-gradient(top, #ff8a50, #c30000);
-  width: 148px;
+  width:238px;
 	
 	
 }
-
+a#Kids{
+	display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 15px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .2em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  color: #fffbf9;
+  border: solid 1px #980401;
+  background: #c50503; 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -moz-linear-gradient(top, #ff8a50, #c30000);
+  width: 238px;
+  	
+}
+a#Formal{
+	display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 15px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .2em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  color: #fffbf9;
+  border: solid 1px #980401;
+  background: #c50503; 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -moz-linear-gradient(top, #ff8a50, #c30000);
+  width: 238px;
+	
+	
+}
+a#Parties{
+	display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 15px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 2em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.5);
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .2em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  color: #fffbf9;
+  border: solid 1px #980401;
+  background: #c50503; 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -moz-linear-gradient(top, #ff8a50, #c30000);
+  width: 238px;
+	
+	
+}
 
 
 a#addNew{
@@ -189,7 +278,7 @@ a#addNew{
   color: #fffbf9;
   border: solid 1px #980401;
   background: #c50503; 
-  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
+  background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000));
   background: -moz-linear-gradient(top, #ff8a50, #c30000);
   
   
@@ -299,7 +388,7 @@ input#searchButton{
 	background: #c50503; /* for non-css3 browsers */
 	background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); /* For Webkit Browsers */
 	background: -moz-linear-gradient(top, #ff8a50, #c30000); /* for Firefox */
-	
+	width:145px;
 	
 }
 
