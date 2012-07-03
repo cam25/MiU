@@ -92,6 +92,8 @@ a#addEvent{
   background: #c50503; 
   background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
   background: -moz-linear-gradient(top, #ff8a50 0%, #c30000 100%);
+  width:230px;
+  
 
   
  
@@ -201,7 +203,7 @@ a#Entertainment{
   text-align: center;
   text-decoration: none;
   font: 15px/100% Arial, Helvetica, sans-serif;
-  padding: .5em 2em .55em;
+  padding: .5em 2em .22em;
   text-shadow: 0 1px 1px rgba(0,0,0,.5);
   -webkit-border-radius: .5em;
   -moz-border-radius: .2em;
@@ -215,6 +217,7 @@ a#Entertainment{
   background: -webkit-gradient(linear, left top, left bottom, from(#ff8a50), to(#c30000)); 
   background: -moz-linear-gradient(top, #ff8a50, #c30000);
   width:238px;
+  
 	
 	
 }
