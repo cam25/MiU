@@ -10,15 +10,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var theElement = document.getElementById(x);
         return theElement;
     }
-    function Slider() {
-   var slider = ge('range');
-   var sliderSpan = ge('rangeValue');
    
-   slider.onchange = function() {
-        sliderSpan.innerHTML = this.value;
-     }
-}
-
     //create select field element and populate with options.
     function makeCats() {
         var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower", "Concert", "Movies", "KidsEvent", "DinnerParty", "RoadTrip", "SportingEvent", "BookSigning"];
@@ -401,82 +393,82 @@ window.addEventListener("DOMContentLoaded", function () {
     }
     
     function getSearch() {
-        var category = ge("groups").value;
+	
+        //var category = $("groups").value;
         var term = ge("search").value;
         var makeDiv2 = document.createElement("div");
-        makeDiv2.setAttribute("id", "searches");
+        makeDiv2.setAttribute("id", "items");
         var makeList2 = document.createElement("ul");
         makeDiv2.appendChild(makeList2);
         document.body.appendChild(makeDiv2);
+         ge("items").style.display = "block";
+         
         //By Category Only
-        if (category !== "--Choose A Catagory--" && term === "") {
-            for (var i = 0, j = localStorage.length; i < j; i++) {
-                var key = localStorage.key(i);
-                var vals = localStorage.getItem(key);
-                var items = JSON.parse(vals);
-                var catLi = document.createElement("li");
-                makeList2.appendChild(catLi);
-                if (category === items.group[1]) {
-                    for (var n in items) {
-                        var subCatLi = document.createElement("li");
-                        var subText = items[n][0] + "" + items[n][1];
-                        makeList2.innerHTML = subText;
-
-
-
-                    }
-
-
-                }
-
-            }
-        }
+       // if (category !== "--Choose A Catagory--" && term === "") {
+       //     for (var i = 0, j = localStorage.length; i < j; i++) {
+       //         var key = localStorage.key(i);
+       //         var vals = localStorage.getItem(key);
+       //         var items = JSON.parse(vals);
+       //         if (category === items.group[1]) {
+       //             for (var n in items) {
+	   //             	console.log(items[n][1]);
+       //             }
+       //         }
+       //     }
+       // }
 
 
         //By term
-        if (term !== "" && category === "--Choose A Catagory--") {
+        if (term !== "" ) {
             for (i = 0, j = localStorage.length; i < j; i++) {
+            var makeLi2 = document.createElement("ul");
+            var linksLi2 = document.createElement("li");
+            makeList2.appendChild(makeLi2);
                 var key = localStorage.key(i);
                 var vals = localStorage.getItem(key);
-                var itemz = JSON.parse(vals);
-                for (n in itemz) {
-                    if (itemz[n][1].indexOf(term) != -1) {
-                        for (var q in itemz) {
-                            console.log(itemz[q][1]);
-
-
-
+                var items = JSON.parse(vals);
+                var makeOtherList2 = document.createElement("li");
+                makeLi2.appendChild(makeOtherList2);
+                getImage(items.groups[1], makeOtherList2);
+                for (var p in items) {
+                    if (items[p][1] === term) {
+                        for (var q in items) {
+                        var makeOtherLi2 = document.createElement("li");
+                        makeOtherList2.appendChild(makeOtherLi2);
+                         var optSubText2 = items[0] + "" + items[1];
+                         makeOtherLi2.innerHTML = optSubText2;
+                         makeOtherList2.appendChild(linksLi2);
+                            //console.log(items[q][1]);
                         }
                     }
                 }
             }
-
         }
 
+}
         //By category and term
-        if (term !== "" && category !== "--Choose A Catagory--") {
-            for (i = 0, j = localStorage.length; i < j; i++) {
-                var key = localStorage.key(i);
-                var vals = localStorage.getItem(key);
-                var itemz = JSON.parse(vals);
-                for (n in itemz) {
-                    if (itemz[n][1].indexOf(term) != -1) {
-                        for (q in itemz) {
-                            console.log(itemz[q][1]);
-                        }
-                    }
-                }
-            }
-
-        }
-    }
+//        if (term !== "" && category !== "--Choose A Catagory--") {
+//            for (i = 0, j = localStorage.length; i < j; i++) {
+//                var key = localStorage.key(i);
+//                var vals = localStorage.getItem(key);
+//                var itemz = JSON.parse(vals);
+//                for (var f in items) {
+//                    if (items[f][1].indexOf(term) != -1) {
+//                        for (var q in items) {
+//                            console.log(items[q][1]);
+//                        }
+//                    }
+//                }
+//            }
+//        }
+//    }
 
 
 
     makeCats();
-    Slider();
     
-
+    
+    
     var displayLink = ge("displayStoredData");
     displayLink.addEventListener("click", getData);
     var clearLink = ge("clearStoredData");
@@ -486,7 +478,7 @@ window.addEventListener("DOMContentLoaded", function () {
     var editSubmit = ge("saveEvent");
     editSubmit.addEventListener("click", validate);
     var searchB = ge("searchButton");
-    search.addEventListener("click", getSearch);
+    searchB.addEventListener("click", getSearch);
 
 
 });

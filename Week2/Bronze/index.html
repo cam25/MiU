@@ -19,14 +19,14 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-	<script src="../JQMobile Template/js/libs/modernizr.custom.min.js"></script>
+	<script src="../Week2/js/libs/modernizr.custom.min.js"></script>
 
 </head>
 <body>
 	
 	<div data-role="page" data-theme="e">
 		
-		<div data-role="header">
+		<div data-role="header" data-theme="a">
 			<h1>Plan Events</h1>
 	</div>
 	
@@ -38,8 +38,8 @@
 			
 	
 
-
-
+			
+                
 <p>
 		<a href="addItem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
 				</p>
@@ -47,7 +47,7 @@
 				
 				<h4>Browse By Event Category:</h4>
 		<div data-role="collapsible-set"data-theme="b">	
-				
+		<div data-role="listview" data-inset="true" data-filter="true">
 
 		<div data-role="collapsible" data-collapsed="true">
 			<h3>Entertainment</h3>
@@ -77,7 +77,7 @@
 		</div>	
 		
 		<div data-role="footer">
-		<h4>footer</h4>
+		<h4><a href="#" "name="Home" value="Home">Home </a></h4>
 		</div> 
 		
 		
@@ -89,7 +89,9 @@
 	
 	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
+	
+
+
 
 </body>
 </html>
