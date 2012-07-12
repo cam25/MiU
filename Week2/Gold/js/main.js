@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower", "Concert", "Movies", "KidsEvent", "DinnerParty", "RoadTrip", "SportingEvent", "BookSigning"];
         var formTag = document.getElementsByTagName("form"),
             //form tag is array 
-            //selectLi = ge("chooseCat"),
+            selectLi = ge("chooseCat"),
             makeSelect = document.createElement("select");
         makeSelect.setAttribute("id", "groups");
         for (var i = 0, j = eventGroups.length; i < j; i++) {
@@ -26,53 +26,10 @@ window.addEventListener("DOMContentLoaded", function () {
             makeOption.innerHTML = optText;
             makeSelect.appendChild(makeOption);
         }
-       // selectLi.appendChild(makeSelect);
+        selectLi.appendChild(makeSelect);
 
     }
-    function getSearch(term) {
-	
-         
-        //By Category Only
-       // if (category !== "--Choose A Catagory--" && term === "") {
-       //     for (var i = 0, j = localStorage.length; i < j; i++) {
-       //         var key = localStorage.key(i);
-       //         var vals = localStorage.getItem(key);
-       //         var items = JSON.parse(vals);
-       //         if (category === items.group[1]) {
-       //             for (var n in items) {
-	   //             	console.log(items[n][1]);
-       //             }
-       //         }
-       //     }
-       // }
-
-
-        //By term
-           if (term !== ""){
-        for (i = 0, j = localStorage.length; i < j; i++) {
-            var key = localStorage.key(i);
-            if (key.substring(0,3) != "")
-            {
-                continue;
-            }
-            var vals = localStorage.getItem(key);
-            var items = JSON.parse(vals);
-                if (items["group"][1].indexOf(term) != -1) {
-                    var resultsUl = $("#searchResults");
-                    for (var q in items) {
-                        
-                        $("<li>").html(items[q][0] + items[q][1]).appendTo(resultsUl);
-                    }
-                
-            }
-        }
-    }
-    $("searchTerm").html($("searchButton").val());
-
-
-
-}
-getSearch("searchButton").value;
+    
 
     function getCheckboxValue() {
 
