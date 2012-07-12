@@ -24,9 +24,11 @@
 </head>
 <body>
 	
-	<div data-role="page" data-theme="e">
+	<div data-role="page" data-theme="e" >
 		
-		<div data-role="header" data-theme="a">
+		
+		<div data-role="header" data-theme="a" >
+	
 			<h1>Plan Events</h1>
 	</div>
 	
@@ -41,7 +43,7 @@
 			
                 
 <p>
-		<a href="addItem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
+		<a href="addItem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="true" data-theme="b">Click To Add Your Event</a>
 				</p>
 				
 				
@@ -50,38 +52,45 @@
 		
 		<div data-role="listview" data-inset="true" data-filter="true">
 		
-		<div data-role="collapsible" data-collapsed="true">
+		<div data-role="collapsible" data-collapsed="true" >
 					<h3><img src="../Gold/images/Entertainment.png"> Entertainment</h3>
-			<p> <a href="#" "name="Concert" value="Concert"> Concerts</a></p>
-			<p>	<a href="#" "name="Movies" value="Movies"> Movies</a></p>
-			<p>	<a href="#" "name="SportingEvent" value="SportingEvent"> Sporting Events</a></p>
-			<p> <a href="#" "name="RoadTrip" value="RoadTrip">Road Trip </a></p>
+			<p> <a href="concert.html" "name="Concert" value="Concert" data-role="button" data-ajax="false"> Concerts</a></p>
+			<p>	<a href="Movies.html" "name="Movies" value="Movies"data-role="button"> Movies</a></p>
+			<p>	<a href="SportingEvent.html" "name="SportingEvent" value="SportingEvent"data-role="button"> Sporting Events</a></p>
+			
 				 
 		</div>		
 		<div data-role="collapsible" data-collapsed="true">
 			<h3><img src="../Gold/images/Kids.png">  Kids Events</h3>
-			<a href="#" name="KidsEvent" value="KidsEvent"> Kids Events</a>
+			<a href="KidsEvent.html" name="KidsEvent" value="KidsEvent" data-role="button"> Kids Events</a>
 			</div>
 		<div data-role="collapsible" data-collapsed="true">
 			<h3><img src="../Gold/images/FormalEvent.png"> Formal Events</h3>
-			<p> <a href="#" "name="Meeting" value="Meeting">Meeting </a></p>
-			<p> <a href="#" "name="BookSigning" value="BookSigning">Book Signing </a></p>
-			<p> <a href="#" "name="Wedding" value="Wedding">Wedding </a></p>
+			<p> <a href="Meeting.html" "name="Meeting" value="Meeting" data-role="button">Meeting </a></p>
+			<p> <a href="BookSigning.html" "name="BookSigning" value="BookSigning" data-role="button">Book Signing </a></p>
+			<p> <a href="Wedding.html" "name="Wedding" value="Wedding" data-role="button">Wedding </a></p>
 			</div>		
 		<div data-role="collapsible" data-collapsed="true">
 			<h3><img src="../Gold/images/Party.png"> Party</h3>
-			<p> <a href="#" "name="DinnerParty" value="DinnerPary">Dinner Party </a></p>
-			<p> <a href="#" "name="BabyShower" value="BabyShower">Baby Shower </a></p>
+			<p> <a href="DinnerParty.html" "name="DinnerParty" value="DinnerPary" data-role="button">Dinner Party </a></p>
+			<p> <a href="BabyShower.html" "name="BabyShower" value="BabyShower" data-role="button">Baby Shower </a></p>
+			<p> <a href="Birthday.html" "name="Birthday" value="Birthday" data-role="button"> Birthday </a></p>
+
 			</div>
 		</div>
 				
 		</div>	
 		
-		<div data-role="footer">
-		<h4><a href="#" "name="Home" value="Home">Home </a></h4>
+		<div data-role="footer" data-position="fixed" >
+<div data-role="navbar">
+
+<ul>
+<li><a href="About.html" >About</a></li>
+<li><a href="../Bronze/index.html" >Bronze</a></li>
+</ul>
 		</div> 
 		
-		
+		</div>
 		
 
 		
