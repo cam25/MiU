@@ -15,7 +15,7 @@
 	<meta http-equiv="cleartype" content="on">
 	
 	<!-- StyleSheets under here -->
-	<link href="../Gold/css/style.css" rel="stylesheet" type="text/css" />
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -24,84 +24,57 @@
 </head>
 <body>
 	
-	<div data-role="page" data-theme="e" >
+	<div data-role="page" data-theme="b">
 		
-		
-		<div data-role="header" data-theme="a" >
-	
+		<div data-role="header" data-theme="e">
 			<h1>Plan Events</h1>
 	</div>
 	
 		
-			<div data-role="content">
-			
-			
-			<img src="../Gold/images/CTA4.png">
-			
-	
+			<div data-role="content" >
 
 			
-                
-<p>
-		<a href="additem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="true" data-theme="b">Click To Add Your Event</a>
-				</p>
-				
-				
-				<h4>Browse By Event Category:</h4>
-		<div data-role="collapsible-set"data-theme="b">	
-		
-		<div data-role="listview" data-inset="true" data-filter="true">
-		
-		<div data-role="collapsible" data-collapsed="true" >
-					<h3><img src="../Gold/images/Entertainment.png"> Entertainment</h3>
-			<p> <a href="concert.html" "name="Concert" value="Concert" data-role="button" data-ajax="false"> Concerts</a></p>
-			<p>	<a href="Movies.html" "name="Movies" value="Movies"data-role="button"> Movies</a></p>
-			<p>	<a href="SportingEvent.html" "name="SportingEvent" value="SportingEvent"data-role="button"> Sporting Events</a></p>
+			<img src="../Bronze/images/CTA4.png">
 			
-				 
-		</div>		
-		<div data-role="collapsible" data-collapsed="true">
-			<h3><img src="../Gold/images/Kids.png">  Kids Events</h3>
-			<a href="KidsEvent.html" name="KidsEvent" value="KidsEvent" data-role="button"> Kids Events</a>
+			                
+		<a href="addItem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
+				
+		<a href="ThumbnailGrid.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To View Events</a>
+				
+		<h4> Browse By Event Category:</h4>	
+						<div data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Events...">
+		
+				
+					<a href="Entertainment.html" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="true" data-theme="b">Entertainment</a>
+				
+				
+					<a href="KidsEvent2.html" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="true" data-theme="b">Kids Event</a>
+				
+				
+					<a href="FormalEvent.html" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Formal Events</a>
+				
+				
+				<a href="Parties.html" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Party Events</a>
+				
+	</div>
 			</div>
-		<div data-role="collapsible" data-collapsed="true">
-			<h3><img src="../Gold/images/FormalEvent.png"> Formal Events</h3>
-			<p> <a href="Meeting.html" "name="Meeting" value="Meeting" data-role="button">Meeting </a></p>
-			<p> <a href="BookSigning.html" "name="BookSigning" value="BookSigning" data-role="button">Book Signing </a></p>
-			<p> <a href="Wedding.html" "name="Wedding" value="Wedding" data-role="button">Wedding </a></p>
-			</div>		
-		<div data-role="collapsible" data-collapsed="true">
-			<h3><img src="../Gold/images/Party.png"> Party</h3>
-			<p> <a href="DinnerParty.html" "name="DinnerParty" value="DinnerPary" data-role="button">Dinner Party </a></p>
-			<p> <a href="BabyShower.html" "name="BabyShower" value="BabyShower" data-role="button">Baby Shower </a></p>
-			<p> <a href="Birthday.html" "name="Birthday" value="Birthday" data-role="button"> Birthday </a></p>
 
+			<div data-role="footer" data-position="fixed" data-theme="e">
+				<div data-role="navbar">
+					<ul>
+						<li><a href="About.html" >About</a></li>
+						<li><a href="../Bronze/index.html" >Bronze</a></li>
+						</ul>
+				</div>
 			</div>
-		</div>
-				
-		</div>	
-		
-		<div data-role="footer" data-position="fixed" >
-<div data-role="navbar">
-
-<ul>
-<li><a href="About.html" >About</a></li>
-<li><a href="../Bronze/index.html" >Bronze</a></li>
-</ul>
-		</div> 
-		
-		</div>
-		
-
-		
-
-	<!-- JavaScript under here -->
-	
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
-	
-
-
-
-</body>
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+        </body>
 </html>
+		
+		
+		
+
+		
+
+	
