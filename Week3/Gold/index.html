@@ -1,0 +1,631 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"/>
+	
+	<title>Special Event Planner</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on"/>
+	
+	<!-- StyleSheets under here -->
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+<!-- Home -->
+	<div data-role="page" id="Home" data-theme="b">
+		<div data-role="header" data-theme="e">
+			<h1>Plan Events</h1>
+		</div>
+		<div data-role="content" >
+			<img src="../Gold/images/CTA4.png"/>
+			<a href="addItem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
+			<a href="#ThumbnailGrid" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To View Events</a>
+			<a href="#rss" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Event News</a>
+			<h4> Browse By Event Category:</h4>	
+			<div data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Events...">
+				<a href="#Entertainment" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Entertainment</a>
+				<a href="#KidsEvent2" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Kids Event</a>
+				<a href="#FormalEvent" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Formal Events</a>
+				<a href="#Parties" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Party Events</a>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--NEWS FEED-->
+	 <div data-role="page" id="rss" data-add-back-btn="true" data-theme="e">
+
+			<div data-role="header" data-theme="e">
+				<h1>Event News</h1>
+			</div>
+
+			<div data-role="content">
+
+				<div id="rssFeed"></div>
+			</div>
+
+			<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+	
+	
+				</div>
+	
+<!-- ThumbnailGrid -->
+	<div data-role="page" id="ThumbnailGrid" data-theme="b">
+		<div data-role="header" data-theme="e"><a href="../Gold/index.html" id="Home">Home</a>
+			<h1>Pick An Event</h1>
+		</div>
+		<div data-role="content">
+			<h4>Entertainment Categories</h4>
+			<div class="ui-grid-b">		
+				<div class="ui-block-a">
+					<a href="#Concert">
+    						<img src="../Gold/images/ConcertThumb.png" />
+    						<p>Concert</p>
+    					</a>
+				</div>	
+				<div class="ui-block-b">
+					<a href="#Movies">
+    						<img src="../Gold/images/MoviesThumb.png" />
+    						<p>Movies</p>
+    					</a>
+				</div>
+  				<div class="ui-block-c">
+					<a href="#SportingEvent">
+    						<img  src="../Gold/images/SportingEventsThumb.png" />
+    						<p>Sporting Event</p>
+    					</a>
+  				</div>
+  			</div>
+    			<h4>Kids Categories</h4>
+    			<div class="ui-block-a">
+				<a href="#KidsEvent">
+    					<img  src="../Gold/images/Kids.png" />
+    					<p>Kids Events</p>
+    				</a>
+			</div>
+		</div>
+			<div class="ui-grid-b">
+  				<h4>Formal Events</h4>
+				<div class="ui-block-b">
+					<a href="#Meeting">
+    						<img  src="../Gold/images/MeetingThumb.png" />
+    						<p>Meeting</p>
+    					</a>
+				</div>
+			<div class="ui-block-b">
+				<a href="#BookSigning">
+    					<img  src="../Gold/images/BookSign.png" />
+    					<p>Book Signings</p>
+    				</a>
+			</div>
+			<div class="ui-block-b">
+				<a href="#Wedding">
+    					<img  src="../Gold/images/WeddingThumbnail.png" />
+    					<p>Wedding</p>
+    				</a>
+ 			</div>
+			<div class="ui-grid-b">
+				<h4>Parties</h4>
+				<div class="ui-block-a">
+					<a href="#DinnerParty">
+    					<img  src="../Gold/images/DinnerPartyThumb.png" />
+    					<p>Dinner Parties</p>
+    					</a>
+    				</div>
+				<div class="ui-block-b">
+					<a href="#BabyShower">
+    						<img  src="../Gold/images/BabyShowers.png" />
+    						<p>Baby Shower</p>
+    					</a>
+    				</div>
+    				<div class="ui-block-c">
+					<a href="#Birthday">
+    						<img  src="../Gold/images/BirthdayThumb.png" />
+    						<p>Birthday</p>
+    					</a>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#Home" data-ajax="false" >Home</a></li>
+				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+			</ul>
+		</div>
+	</div>
+	
+<!-- Entertainment -->
+	<div data-role="page" id="Entertainment" data-theme="b">
+		<div data-role="header" data-theme="e"><a href="#Home" id="Home">Home</a>
+			<h1>Click Event</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-grid-b">
+  				<div class="ui-block-a">
+					<a href="#Concert">
+    						<img src="../Gold/images/ConcertThumb.png" />
+    						<p>Concert</p>
+    					</a>
+ 				</div>
+				<div class="ui-block-b">
+					<a href="#Movies">
+    						<img src="../Gold/images/MoviesThumb.png" />
+    						<p>Movies</p>
+    					</a>
+				</div>
+				<div class="ui-block-c">
+					<a href="#SportingEvent">
+    						<img  src="../Gold/images/SportingEventsThumb.png" />
+    						<p>Sporting Event</p>
+    					</a>
+  				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- Concert -->
+	<div data-role="page" id= "Concert" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Entertainment">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">				
+			<p>Event:Concert</p>
+			<p>FirstName:Nate</p> 
+			<p>LastName:Reynolds</p>
+			<p>Address:677 Roges Avenue</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-331-1234</p>
+			<p>email:Bait@email.com</p>
+			<p>TimeOfEvent:10:00PM</p>
+			<p>Date:01/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: 50 Cent Show!</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- Movies -->
+	<div data-role="page" id="Movies" data-theme="e">
+		<div data-role="header" data-theme="a" ><a href="#Entertainment">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">
+			<p>Event:Movie</p>
+			<p>FirstName:Willis</p> 
+			<p>LastName:Poreter</p>
+			<p>Address:1 Gabe St</p>
+			<p>City:Easton</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-461-3222</p>
+			<p>email:world2@email.com</p>
+			<p>TimeOfEvent:11:00PM</p>
+			<p>Date:08/14/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: New Movie</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#Home" data-ajax="false" >Home</a></li>
+				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+			</ul>
+		</div>
+	</div>
+	</div>
+	
+<!-- SportingEvent -->
+	<div data-role="page" id="SportingEvent" data-theme="e">
+		<div data-role="header" data-theme="a" ><a href="#Entertainment">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+
+		<div data-role="content">
+			<p>Event:SportingEvent</p>
+			<p>FirstName:Paul</p> 
+			<p>LastName:Norman</p>
+			<p>Address:333 Corin Rd</p>
+			<p>City:Seabrook</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:301-239-1234</p>
+			<p>email:Goode@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:07/12/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Orioles Game!</p>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- KidsEvent2 -->
+	<div data-role="page" id="KidsEvent2" data-theme="b">
+		<div data-role="header" data-theme="e"><a href="#Home" id="Home">Back</a>
+			<h1>Pick An Event</h1>
+		</div>
+		
+		<div data-role="content">
+			<div class="ui-grid-b">
+				<h4>Kids Categories</h4>
+				<div class="ui-block-a">
+					<a href="#KidsEvent">
+    						<img  src="../Bronze/images/Kids.png" />
+    						<p>Kids Events</p>
+    					</a>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- KidsEvent -->
+	<div data-role="page" id="KidsEvent" data-theme="e">
+		<div data-role="header" data-theme="a" ><a href="#KidsEvent2" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">			
+			<p>Event:KidsEvent</p>
+			<p>FirstName:Kerry</p> 
+			<p>LastName:Diggs</p>
+			<p>Address:3212 Harp St</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-443-4443</p>
+			<p>email:Balto@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:02/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Saturday</p>
+			<p>TextBox: Six Flags!</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- FormalEvent -->
+	<div data-role="page" id="FormalEvent" data-theme="b">
+		<div data-role="header" data-theme="e"><a href="#Home">Back</a>
+			<h1>Click Event</h1>
+		</div>
+		<div data-role="content">
+			<div class="ui-grid-b">
+  				<h4>Formal Events:</h4>
+				<div class="ui-block-b">
+					<a href="#Meeting">
+    						<img  src="../Gold/images/MeetingThumb.png" />
+    						<p>Meeting</p>
+    					</a>
+				</div>
+				<div class="ui-block-b">
+					<a href="#BookSigning">
+    						<img  src="../Gold/images/BookSign.png" />
+    						<p>Book Signings</p>
+    					</a>
+				</div>
+				<div class="ui-block-b">	
+    					<a href="#Wedding">
+    						<img  src="../Gold/images/WeddingThumbnail.png" />
+    						<p>Wedding</p>
+    					</a>
+				</div>
+  			</div>
+  		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- Meeting -->
+	<div data-role="page" id="Meeting" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#FormalEvent" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">
+			<p>Event:Meeting</p>
+			<p>FirstName:West</p> 
+			<p>LastName:Ucly</p>
+			<p>Address:122 West East st</p>
+			<p>City:Glen Burnie</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-332-3333</p>
+			<p>email:Westter@email.com</p>
+			<p>TimeOfEvent:6:30PM</p>
+			<p>Date:10/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox:Job Interview</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- Wedding -->
+	<div data-role="page" id="Wedding" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#FormalEvent" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">		
+			<p>Event:Wedding</p>
+			<p>FirstName:John</p> 
+			<p>LastName:Smith</p>
+			<p>Address:333 West 3rd St</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-555-5555</p>
+			<p>email:email@email.com</p>
+			<p>TimeOfEvent:10:00PM</p>
+			<p>Date:01/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Wedding Day</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- BookSigning -->
+	<div data-role="page" id=BookSigning" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#FormalEvent" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">
+			<p>Event:BookSigning</p>
+			<p>FirstName:West</p> 
+			<p>LastName:Ucly</p>
+			<p>Address:122 West East st</p>
+			<p>City:Glen Burnie</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-332-3333</p>
+			<p>email:Westter@email.com</p>
+			<p>TimeOfEvent:6:30PM</p>
+			<p>Date:10/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox:Job Interview</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- Parties -->
+	<div data-role="page" id="Parties" data-theme="b">
+		<div data-role="header" data-theme="e"><a href="#Home" id="Home">Back</a>
+			<h1>Click Event</h1>
+		</div>
+		
+		<div data-role="content">
+			<div class="ui-grid-b">
+				<h4>Parties</h4>
+				<div class="ui-block-a">
+					<a href="#DinnerParty">
+    						<img  src="../Gold/images/DinnerPartyThumb.png" />
+    						<p>Dinner Parties</p>
+    					</a>
+    				</div>
+    				<div class="ui-block-b">
+					<a href="#BabyShower">
+    						<img  src="../Gold/images/BabyShowers.png" />
+    						<p>Baby Shower</p>
+    					</a>
+    				</div>
+				<div class="ui-block-c">
+					<a href="#Birthday">
+    						<img  src="../Gold/images/BirthdayThumb.png" />
+    						<p>Birthday</p>
+    					</a>
+				</div>
+			</div>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- DinnerParty -->
+	<div data-role="page" id="DinnerParty" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Parties" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">		
+			<p>Event:DinnerParty</p>
+			<p>FirstName:Clyde</p> 
+			<p>LastName:Jones</p>
+			<p>Address:1330 Park Ave</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-123-3433</p>
+			<p>email:Morrison@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:09/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Chilis</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- BabyShower -->
+	<div data-role="page" id="BabyShower" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Parties" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">					
+			<p>Event:BabyShower</p>
+			<p>FirstName:Kelly</p> 
+			<p>LastName:Price</p>
+			<p>Address:5455 Frankford</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-331-1234</p>
+			<p>email:Ester@email.com</p>
+			<p>TimeOfEvent:2:00PM</p>
+			<p>Date:11/14/2012</p>
+			<p>PriorityRange:10/10</p>
+			<p>Day:Sunday</p>
+			<p>TextBox: Kellys First Baby Shower. Arrive 1 hour early to help get setup.</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- Birthday -->
+	<div data-role="page" id="Birthday" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Parties" id="Home">Back</a>
+			<h1>Upcoming Event</h1>
+		</div>
+		<div data-role="content">		
+			<p>Event:Birthday</p>
+			<p>FirstName:Gregg</p> 
+			<p>LastName:Reicter</p>
+			<p>Address:22 W 4th St</p>
+			<p>City:Lithicum</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-223-1234</p>
+			<p>email:Jonny@email.com</p>
+			<p>TimeOfEvent:3:00PM</p>
+			<p>Date:08/22/2012</p>
+			<p>PriorityRange:10/10</p>
+			<p>Day:Saturday</p>
+			<p>TextBox: Timmys First Birthday!!!</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+<!-- About -->
+	<div data-role="page" id="About" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="../Bronze/index.html" id="Home">Back</a>
+			<h1>About</h1>
+		</div>
+		<div data-role="content">		
+			<p> This app was designed with the user in mind. This app allows the user to plan a range of events and set the priority of the event from high to low depending on the urgency or importance of the user. This app is currently in beta testing phase but will be official shortly. Any bug please report them to cam25@fullsail.edu. Thanks (Special Event Planner App Copyright 2012)</p>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	<script src="./js/RssFeed.js"></script>
+	<script src="./js/RssFeeder.js"></script>
+</body>
+</html>
+		

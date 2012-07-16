@@ -4,7 +4,7 @@
 
 		<meta charset="utf-8">
 
-		<title>My Movie List</title>
+		<title>Event Planner</title>
 
 		<!--  Mobile viewport optimized: j.mp/bplateviewport -->
 		<meta name="HandheldFriendly" content="True">
@@ -16,41 +16,38 @@
 
 		<!-- StyleSheets under here -->
 		<link href="./css/style.css" rel="stylesheet" type="text/css" />
-
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" type="text/css" />
 
-		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
-		<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
+		<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & featureee detects -->
+		<script src="./js/libs/modernizr.custom.min.js"></script>
 
 	</head>
         <body>
-            <div data-role="page" id="view" data-add-back-btn="true">
+            <div data-role="page" id="rss" data-add-back-btn="true">
 
 			<div data-role="header">
-				<h1>Search</h1>
+				<h1>Event News</h1>
 			</div>
 
-			<div data-role="content" id="viewContent">
-			    <h1>Search for: <span id="searchTerm"></span></h1>
-                            <p>
-                                <ul id="searchResults">
-                                    
-                                </ul>
-                            </p>
+			<div data-role="content">
+
+				<div id="rssFeed"></div>
 			</div>
 
 			<div data-role="footer" data-position="fixed">
 				<div data-role="navbar">
 					<ul>
 						<li>
-							<a href="index.html" data-transition="flow" data-ajax="true">Home</a>
+							<a href="../Gold/index.html" data-transition="flow" data-ajax="false" >Home</a>
 						</li>
 					</ul>
 				</div>
-			</div>
-		  <script src="../Gold/js/search.js" class="disposableScript"></script>
-
-		</div>
-
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script src="./js/RssFeed.js"></script>
+		<script src="./js/RssFeeder.js"></script>
+	
+				</div>
+		
         </body>
 </html>

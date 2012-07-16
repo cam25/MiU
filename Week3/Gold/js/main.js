@@ -5,9 +5,6 @@
 window.addEventListener("DOMContentLoaded", function () {
 
 
-
-
-
     //getElementByIdFunction
     function ge(x) {
         var theElement = document.getElementById(x);
@@ -469,6 +466,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     makeCats();
+    
     
     
     var displayLink = ge("displayStoredData");

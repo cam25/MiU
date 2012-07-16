@@ -1,0 +1,179 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Special Event Planner</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page" data-theme="b" data-add-back-btn="true">
+		
+		<div data-role="header" data-theme="e">
+			<h1>Plan Events</h1>
+	</div>
+	
+		
+			<div data-role="content" >
+
+			
+			<h1>Event Scheduling</h1>
+			
+        <nav>
+            <a href="#" id="clearStoredData">Clear Data</a>
+            <a href="#" id="displayStoredData">Display Data</a>
+            <a href="../Gold/additem.html" id="addNew" style="display:none;">Add New</a>
+        </nav>
+        <form action="#" method="post" id="eventForm">
+            <div data-role="fieldcontain" id="eventFieldset">
+                <!-- Drop Down Menu -->
+                <legend>Event Planning Form</legend>
+                <ul id="errors"></ul>
+                <ul id="questions">
+                	<div data-role="fieldcontain">
+   <label for="select-choice-1" class="select">Choose Category:</label>
+   <select name="select-choice-1" id="select-choice-1">
+      <option value="Choose">--Choose A Category--</option>
+      <option value="rush">Rush: 3 days</option>
+      <option value="express">Express: next day</option>
+      <option value="overnight">Overnight</option>
+   </select>
+</div>
+                <!-- Days To Schedule -->
+                <div data-role="fieldcontain">
+                <h2>Choose a Day:</h2>
+                <ul class="checkBox">
+                    <li>
+                        <label for="Monday">Monday</label>
+                        <input type="checkbox" name="day" value="Monday" id="Monday" />
+                    </li>
+                    <li>
+                        <label for="Tuesday">Tuesday</label>
+                        <input type="checkbox" name="day" value="Tuesday" id="Tuesday" />
+                    </li>
+                    <li>
+                        <label for="Wednesday">Wednesday</label>
+                        <input type="checkbox" name="day" value="Wednesday" id="Wednesday" />
+                    </li>
+                    <li>
+                        <label for="Thursday">Thursday</label>
+                        <input type="checkbox" name="day" value="Thursday" id="Thursday" />
+                    </li>
+                    <li>
+                        <label for="Friday">Friday</label>
+                        <input type="checkbox" name="day" value="Friday" id="Friday" />
+                    </li>
+                    <li>
+                        <label for="Saturday">Saturday</label>
+                        <input type="checkbox" name="day" value="Saturday" id="Saturday" />
+                    </li>
+                    <li>
+                        <label for="Sunday">Sunday</label>
+                        <input type="checkbox" name="day" value="Sunday" id="Sunday" />
+                    </li>
+                </ul>
+                </div>
+                <!-- Priority Meter -->
+                <div data-role="fieldcontain">
+                <h2>Priority Meter:</h2>
+                <input type="range" name="points" min="1" max="10"
+                value="range" id="range"
+                <!-- Contact Info -->
+                <div data-role="fieldcontain">
+                <h2>Event Time/Day:</h2>
+                <ul>
+                    <li>
+                        <label for="timeOfEvent">Time Of Event</label>
+                        <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" />
+                    </li>
+                    <br />
+                    <li>
+                        <label for="dateOfEvent">Date Of Event</label>
+                        <input type="date" name="dateOfEvent" size="Event" id="dateOfEvent" placeholder="Date Of Event" />
+                    </li>
+                </ul>
+                <!-- ContactPerson -->
+                <h2>Contact Person:</h2>
+                <ul>
+                    <li>
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="First name" id="firstName" placeholder="First Name" />
+                        <br />
+                    </li>
+                    <li>
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="Last name" id="lastName" placeholder="Last Name" />
+                    </li>
+                    <li>
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" placeholder="Address" />
+                    </li>
+                    <li>
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" placeholder="City" />
+                    </li>
+                    <li>
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" placeholder="State" />
+                    </li>
+                    <li>
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" />
+                    </li>
+                    <li>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                    </li>
+                </ul>
+                </div>
+                <!-- Comments -->
+                <h2>Comments:</h2>
+                <label for="textBox"></label>
+                <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
+            </div>
+            <!-- Buttons -->
+            <input type="submit" id="saveEvent" value="Save Event" />
+            <input type="submit" id="Home" value="Home"/>            
+        </form>
+
+			</div>
+			
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="About.html" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script> 
+       <script type="text/javascript" src="../Gold/js/JSON.js"></script>
+        <script type="text/javascript" src="../Gold/js/main.js"></script>
+        </body>
+</html>
+		
+		
+		
+
+		
+
+	
