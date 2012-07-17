@@ -2,24 +2,28 @@
 <html lang="en">
 <head>
 
-	<meta charset="utf-8">
+	<meta charset="utf-8" />
 	
 	<title>Special Event Planner</title>
 	
 	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
-	<meta name="HandheldFriendly" content="True">
+	<meta name="HandheldFriendly" content="True" />
 	<meta name="MobileOptimized" content="320"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	
 	<!-- Mobile IE needs ClearType for smoothing fonts -->
-	<meta http-equiv="cleartype" content="on">
+	<meta http-equiv="cleartype" content="on" />
 	
 	<!-- StyleSheets under here -->
-	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link href="./css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
+
+	
+  
+ 
 
 </head>
 <body>
@@ -38,8 +42,8 @@
 			
         <nav>
             <a href="#" id="clearStoredData">Clear Data</a>
-            <a href="#" id="displayStoredData">Display Data</a>
-            <a href="../Gold/additem.html" id="addNew" style="display:none;">Add New</a>
+            <a href="#" data-ajax="false" id="displayStoredData" >Display Data</a>
+            <a href="../Gold/additem2.html" id="addNew" style="display:none;" data-ajax="false">Add New</a>
         </nav>
         <form action="#" method="post" id="eventForm">
             <div data-role="fieldcontain" id="eventFieldset">
@@ -56,8 +60,9 @@
       <option value="overnight">Overnight</option>
    </select>
 </div>
+                
                 <!-- Days To Schedule -->
-                <div data-role="fieldcontain">
+                <div data-role="fieldcontain" method="get" action="">
                 <h2>Choose a Day:</h2>
                 <ul class="checkBox">
                     <li>
@@ -89,6 +94,7 @@
                         <input type="checkbox" name="day" value="Sunday" id="Sunday" />
                     </li>
                 </ul>
+                
                 </div>
                 <!-- Priority Meter -->
                 <div data-role="fieldcontain">
@@ -143,6 +149,10 @@
                     </li>
                 </ul>
                 </div>
+                </div>
+                </ul>
+            </div>
+        </form>
                 <!-- Comments -->
                 <h2>Comments:</h2>
                 <label for="textBox"></label>
@@ -150,24 +160,24 @@
             </div>
             <!-- Buttons -->
             <input type="submit" id="saveEvent" value="Save Event" />
-            <input type="submit" id="Home" value="Home"/>            
-        </form>
+            <a href="index.html" data-transition="slidefade" data-role="button">Home</a> 
+	</div>          
+            
 
-			</div>
 			
 		<div data-role="footer" data-position="fixed" data-theme="e">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="About.html" data-ajax="false" >About</a></li>
+					<li><a href="index.html" data-ajax="false" >Back</a></li>
 					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 				</ul>
 			</div>
 		</div>
-	
+		
 		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script> 
-       <script type="text/javascript" src="../Gold/js/JSON.js"></script>
-        <script type="text/javascript" src="../Gold/js/main.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+		<script type="text/javascript" src="http://jzaefferer.github.com/jquery-validation/jquery.validate.js"></script>		<script type="text/javascript" src="../Gold/js/JSON.js"></script>
+        <script type="text/javascript" src="../Gold/js/main3.js"></script>
         </body>
 </html>
 		

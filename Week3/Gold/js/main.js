@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower", "Concert", "Movies", "KidsEvent", "DinnerParty", "RoadTrip", "SportingEvent", "BookSigning"];
         var formTag = document.getElementsByTagName("form"),
             //form tag is array 
-            selectLi = ge("chooseCat"),
+            selectLi = ge("select-choice-1"),
             makeSelect = document.createElement("select");
         makeSelect.setAttribute("id", "groups");
         for (var i = 0, j = eventGroups.length; i < j; i++) {
@@ -105,7 +105,7 @@ window.addEventListener("DOMContentLoaded", function () {
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", ge("groups").value];
+        item.group = ["Event:", ge("select-choice-1").value];
         item.firstName = ["FirstName:", ge("firstName").value];
         item.lastName = ["LastName:", ge("lastName").value];
         item.address = ["address:", ge("address").value];
@@ -148,7 +148,7 @@ window.addEventListener("DOMContentLoaded", function () {
         toggleControls("off");
 
         //populate the form files with the current localStorage values
-        ge("groups").value = item.group[1];
+        ge("select-choice-1").value = item.group[1];
         ge("firstName").value = item.firstName[1];
         ge("lastName").value = item.lastName[1];
         ge("address").value = item.address[1];
@@ -297,100 +297,100 @@ window.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    function validate(event) {
-        //define elements we want to check
-        var getGroup = ge("groups");
-        var getFname = ge("firstName");
-        var getLname = ge("lastName");
-        var getPhoneNumber = ge("phoneNumber");
-        var getEmail = ge("email");
-        var getTime = ge("timeOfEvent");
-        var getDate = ge("dateOfEvent");
-        var getText = ge("textBox");
-        var getIq = ge("range");
-
-        //Reset Error Messages
-        var errorMsg = ge("errors");
-        errorMsg.innerHTML = "";
-        getGroup.style.border = "1px solid black";
-        getFname.style.border = "1px solid black";
-        getLname.style.border = "1px solid black";
-        getPhoneNumber.style.border = "1px solid black";
-        getEmail.style.border = "1px solid black";
-        getTime.style.border = "1px solid black";
-        getDate.style.border = "1px solid black";
-
-        //get  Error messages
-        var messageArray = [];
-        //group validate
-        if (getGroup.value === "--Choose A Catagory--") {
-            var groupError = "Please Select A Group.";
-            getGroup.style.border = "1px solid red";
-            messageArray.push(groupError);
-
-        }
-
-        //firstName validation
-        if (getFname.value === "") {
-            var fNameError = "Please Enter A First Name.";
-            getFname.style.border = "1px solid red";
-            messageArray.push(fNameError);
-
-        }
-
-        if (getLname.value === "") {
-            var LnameError = "Please Enter A Last Name.";
-            getLname.style.border = "1px solid red";
-            messageArray.push(LnameError);
-        }
-
-
-        var RegPhone = /^\(?([0-9]{3})\)?[\-. ]?([0-9]{3})[\-. ]?([0-9]{4})$/;
-
-        if (!(RegPhone.exec(getPhoneNumber.value))) {
-            var phoneError = "Please Enter A valid Phone Number.";
-            getPhoneNumber.style.border = "1px solid red";
-            messageArray.push(phoneError);
-        }
-
-        var RegEx = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
-
-        if (!(RegEx.exec(getEmail.value))) {
-            var emailError = "Please Enter A Valid Email Address.";
-            getEmail.style.border = "1px solid red";
-            messageArray.push(emailError);
-        }
-
-        var re2 = /^\d{1,2}:\d{2}([AP]M)?$/;
-
-        if (!(re2.exec(getTime.value))) {
-            var timeError = "Please Enter Valid Time.(ie 12:00PM)";
-            getTime.style.border = "1px solid red";
-            messageArray.push(timeError);
-        }
-
-        if (getDate.value === "") {
-            var dateError = "Please Enter A Date.(ie 12/24/2012)";
-            getDate.style.border = "1px solid red";
-            messageArray.push(dateError);
-        }
-
-        if (messageArray.length >= 1) {
-            for (var i = 0, j = messageArray.length; i < j; i++) {
-                var txt = document.createElement("li");
-                txt.innerHTML = messageArray[i];
-                errorMsg.appendChild(txt);
-
-            }
-            event.preventDefault();
-
-        } else {
-            //If all is OK this will save.
-            storeData(this.key);
-
-        }
-
-    }
+//    function validate(event) {
+//        //define elements we want to check
+//        var getGroup = ge("groups");
+//        var getFname = ge("firstName");
+//        var getLname = ge("lastName");
+//        var getPhoneNumber = ge("phoneNumber");
+//        var getEmail = ge("email");
+//        var getTime = ge("timeOfEvent");
+//        var getDate = ge("dateOfEvent");
+//        var getText = ge("textBox");
+//        var getIq = ge("range");
+//
+//        //Reset Error Messages
+//       // var errorMsg = ge("errors");
+//       // errorMsg.innerHTML = "";
+//       // getGroup.style.border = "1px solid black";
+//       // getFname.style.border = "1px solid black";
+//       // getLname.style.border = "1px solid black";
+//       // getPhoneNumber.style.border = "1px solid black";
+//       // getEmail.style.border = "1px solid black";
+//       // getTime.style.border = "1px solid black";
+//       // getDate.style.border = "1px solid black";
+//
+//        //get  Error messages
+//        var messageArray = [];
+//        //group validate
+//        if (getGroup.value === "--Choose A Catagory--") {
+//            var groupError = "Please Select A Group.";
+//            getGroup.style.border = "1px solid red";
+//            messageArray.push(groupError);
+//
+//        }
+//
+//        //firstName validation
+//        if (getFname.value === "") {
+//            var fNameError = "Please Enter A First Name.";
+//            getFname.style.border = "1px solid red";
+//            messageArray.push(fNameError);
+//
+//        }
+//
+//        if (getLname.value === "") {
+//            var LnameError = "Please Enter A Last Name.";
+//            getLname.style.border = "1px solid red";
+//            messageArray.push(LnameError);
+//        }
+//
+//
+//        var RegPhone = /^\(?([0-9]{3})\)?[\-. ]?([0-9]{3})[\-. ]?([0-9]{4})$/;
+//
+//        if (!(RegPhone.exec(getPhoneNumber.value))) {
+//            var phoneError = "Please Enter A valid Phone Number.";
+//            getPhoneNumber.style.border = "1px solid red";
+//            messageArray.push(phoneError);
+//        }
+//
+//        var RegEx = /^\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+$/;
+//
+//        if (!(RegEx.exec(getEmail.value))) {
+//            var emailError = "Please Enter A Valid Email Address.";
+//            getEmail.style.border = "1px solid red";
+//            messageArray.push(emailError);
+//        }
+//
+//        var re2 = /^\d{1,2}:\d{2}([AP]M)?$/;
+//
+//        if (!(re2.exec(getTime.value))) {
+//            var timeError = "Please Enter Valid Time.(ie 12:00PM)";
+//            getTime.style.border = "1px solid red";
+//            messageArray.push(timeError);
+//        }
+//
+//        if (getDate.value === "") {
+//            var dateError = "Please Enter A Date.(ie 12/24/2012)";
+//            getDate.style.border = "1px solid red";
+//            messageArray.push(dateError);
+//        }
+//
+//        if (messageArray.length >= 1) {
+//            for (var i = 0, j = messageArray.length; i < j; i++) {
+//                var txt = document.createElement("li");
+//                txt.innerHTML = messageArray[i];
+//                errorMsg.appendChild(txt);
+//
+//            }
+//            event.preventDefault();
+//
+//        } else {
+//            //If all is OK this will save.
+//            storeData(this.key);
+//
+//        }
+//
+//    }
     
     function getSearch() {
 	
@@ -466,19 +466,18 @@ window.addEventListener("DOMContentLoaded", function () {
 
 
     makeCats();
-    
-    
+
     
     var displayLink = ge("displayStoredData");
     displayLink.addEventListener("click", getData);
     var clearLink = ge("clearStoredData");
     clearLink.addEventListener("click", clearLocal);
     var saveLink = ge("saveEvent");
-    saveLink.addEventListener("click", validate);
+    saveLink.addEventListener("click");
     var editSubmit = ge("saveEvent");
-    editSubmit.addEventListener("click", validate);
-    var searchB = ge("searchButton");
-    searchB.addEventListener("click", getSearch);
+    editSubmit.addEventListener("click");
+    //var searchB = ge("searchButton");
+    //searchB.addEventListener("click", getSearch);
 
 
 });
