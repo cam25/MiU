@@ -59,7 +59,7 @@
 	
 	<div data-role="header" data-theme="e">
 			<h1>Add Your Events</h1>
-	</div>
+	</div><!--header close-->
 	
 	<div data-role="content" >
 
@@ -71,7 +71,8 @@
             <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" data-theme="b">Display Saved Events</a>
             <a href="#addItem2" id="addNew" style="display:none;" data-ajax="false">Add New</a>
         </nav>
-		</div>
+		</div><!--Nav Closed-->
+		
         <form action="" method="post" id="eventForm">
             <div data-role="fieldcontain" id="eventFieldset">
             <ul id="errors"></ul>
@@ -93,7 +94,7 @@
       <option value="SportingEvent">Sporting Event</option>
       <option value="BookSigning">Book Signing</option>
    </select>
-                	</div>
+                	</div><!--Dropdown Closed-->
                 
                 <!-- Days To Schedule -->
                 <div data-role="fieldcontain" data-theme="b">
@@ -122,12 +123,14 @@
                         <label for="Sunday">Sunday</label>
                         <input type="checkbox" name="day" value="Sunday" id="Sunday" />
                 </fieldset>
-                </div>
+                </div><!--Dayschedule Closed-->
+                
+                
                 <!-- Priority Meter -->
                 <div data-role="fieldcontain">
                 <h2>Priority Meter:</h2>
                 <input type="range" name="points" min="1" max="10" value="range" id="range" />
-                </div>
+                </div><!--Priority Closed-->
                 
                 <!-- Contact Info -->
                 <div data-role="fieldcontain">
@@ -139,7 +142,8 @@
                         <label for="mydate">Select A Date*</label>
 
                         <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "calbox", 						"calUsePickers": true, "calNoHeader": true}' />  
-                </div>                  
+                </div><!--Time/Day Close-->
+                                  
                 <div data-role="fieldcontain">
                 <h2>Contact Person:</h2>
                
@@ -168,7 +172,7 @@
                         <label for="email">Email Address*</label>
                         <input type="email" name="email" id="email" class="required-email" />
 
-                </div>
+                </div><!--Contact closed-->
                 
                 
         
@@ -177,17 +181,17 @@
                 <h2>Comments:</h2>
                 <label for="textBox"></label>
                 <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
+                </div><!--Textbox closed-->
                 
-            </div>
+            </div><!--Page Closed-->
             
             <!-- Buttons -->
             <div data-role="fieldcontain">
             <input type="submit" id="saveEvent" value="Save" />
             
             <input type="reset" id="resetButton" value="Reset" />
-            </div>
+            </div><!--Button closed-->
             
-            </div>
         </form>
         
         
