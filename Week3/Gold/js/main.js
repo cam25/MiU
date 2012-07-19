@@ -3,15 +3,15 @@
 //MiU
 //MiU1206
 var parseEventForm = function(data) { 
-		//uses data
-		localStorage.setItem("formdata",data)
-	 };
-	 
+        //uses data
+        localStorage.setItem("formdata",data);
+     };
+     
 $(document).bind('pageinit', function(){
-	
-	var evform = $("#eventForm");
-	evform.validate({
-	invalidHandler: function(form, validator){
+    
+    var evform = $("#eventForm");
+    evform.validate({
+    invalidHandler: function(form, validator){
 
 },
 submitHandler: function(){
@@ -20,7 +20,7 @@ parseEventForm(data);
 
 
 }
-	
+    
 });
 
 
@@ -125,8 +125,8 @@ parseEventForm(data);
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", $("select-choice-1").value];
-        item.firstName = ["FirstName:", $("firstName").value];
+        item.group = ["Event:", ge("select-choice-1").value];
+        item.firstName = ["FirstName:", ge("firstName").value];
         item.lastName = ["LastName:", $("lastName").value];
         item.address = ["address:", $("address").value];
         item.city = ["City:", $("city").value];
@@ -151,9 +151,9 @@ parseEventForm(data);
     function autoFillData() {
         //The actual JSON object data required for this to work is coming from our json.js file. which is loaded from our addItem.html file.
         //Store the JSON OBJECT in local storage.
-        for (var n in json) {
+        for (var n in JSON) {
             var id = Math.floor(Math.random() * 1000000001);
-            localStorage.setItem(id, JSON.stringify(json[n]));
+            localStorage.setItem(id, JSON.stringify(JSON[n]));
 
         }
 
@@ -413,7 +413,7 @@ parseEventForm(data);
 //    }
     
     function getSearch() {
-	
+    
         //var category = $("groups").value;
         var term = ge("search").value;
         var makeDiv2 = document.createElement("div");
@@ -431,7 +431,7 @@ parseEventForm(data);
        //         var items = JSON.parse(vals);
        //         if (category === items.group[1]) {
        //             for (var n in items) {
-	   //             	console.log(items[n][1]);
+       //                 console.log(items[n][1]);
        //             }
        //         }
        //     }
@@ -493,7 +493,7 @@ parseEventForm(data);
     var clearLink = ge("clearStoredData");
     clearLink.addEventListener("click", clearLocal);
     var saveLink = ge("saveEvent");
-    saveLink.addEventListener("click",storeData);
+    
     var editSubmit = ge("saveEvent");
     editSubmit.addEventListener("click",getData);
     //var searchB = ge("searchButton");
@@ -501,3 +501,8 @@ parseEventForm(data);
 
 
 });
+
+
+
+
+

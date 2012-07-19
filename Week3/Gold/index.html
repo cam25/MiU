@@ -54,18 +54,24 @@
 		</div>
 	</div>
 	<!--Additem2.html-->
-	<div data-role="page" id="Additem2" data-add-back-btn="true" data-theme="e">
+	
+	<div data-role="page" id="Additem2" data-add-back-btn="true" data-theme="b">
+	
+	<div data-role="header" data-theme="e">
+			<h1>Add Your Events</h1>
+	</div>
 	
 	<div data-role="content" >
 
 			
-			<h1>Event Scheduling</h1>
-			
+			<p>Required Fields Have *</p>
+		<div data-role="fieldcontain">	
         <nav>
-            <a href="#" id="clearStoredData">Clear Data</a>
-            <a href="#" data-ajax="false" id="displayStoredData" >Display Data</a>
-            <a href="../Gold/additem2.html" id="addNew" style="display:none;" data-ajax="false">Add New</a>
+          <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" data-theme="b">Clear Saved Events</a>
+            <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" data-theme="b">Display Saved Events</a>
+            <a href="#Additem2" id="addNew" style="display:none;" data-ajax="false">Add New</a>
         </nav>
+		</div>
         <form action="" method="post" id="eventForm">
             <div data-role="fieldcontain" id="eventFieldset">
             <ul id="errors"></ul>
@@ -87,10 +93,10 @@
       <option value="SportingEvent">Sporting Event</option>
       <option value="BookSigning">Book Signing</option>
    </select>
-</div>
+                	</div>
                 
                 <!-- Days To Schedule -->
-                <div data-role="fieldcontain" >
+                <div data-role="fieldcontain" data-theme="b">
                 <fieldset data-role="controlgroup">
                 <h4>Choose a day:</h4>
                 
@@ -130,7 +136,7 @@
                         <label for="timeOfEvent">Time Of Event</label>
                         <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" class="required" />
                         
-                        <label for="mydate">Some Date</label>
+                        <label for="mydate">Select A Date</label>
 
                         <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "calbox", 						"calUsePickers": true, "calNoHeader": true}' />  
                 </div>                  
@@ -223,81 +229,103 @@
 		<div data-role="header" data-theme="e"><a href="../Gold/index.html">Back</a>
 			<h1>Pick An Event</h1>
 		</div>
-		<div data-role="content">
-			<h4>Entertainment Categories</h4>
-			<div class="ui-grid-b">		
-				<div class="ui-block-a">
-					<a href="#Concert">
-    						<img src="images/ConcertThumb.png" />
-    						<p>Concert</p>
-    					</a>
-				</div>	
-				<div class="ui-block-b">
-					<a href="#Movies">
-    						<img src="images/MoviesThumb.png" />
-    						<p>Movies</p>
-    					</a>
-				</div>
-  				<div class="ui-block-c">
-					<a href="#SportingEvent">
-    						<img  src="images/SportingEventsThumb.png" />
-    						<p>Sporting Event</p>
-    					</a>
-  				</div>
-  			</div>
-    			<h4>Kids Categories</h4>
-    			<div class="ui-block-a">
-				<a href="#KidsEvent">
-    					<img  src="images/Kids.png" />
-    					<p>Kids Events</p>
-    				</a>
-    				
-			</div>
-		</div>
-			<div class="ui-grid-b">
-  				<h4>Formal Events</h4>
-				<div class="ui-block-b">
-					<a href="#Meeting">
-    						<img  src="images/MeetingThumb.png" />
-    						<p>Meeting</p>
-    					</a>
-    					
-				</div>
-			<div class="ui-block-b">
-				<a href="#BookSigning">
-    					<img  src="images/BookSign.png" />
-    					<p>Book Signings</p>
-    				</a>
-			</div>
-			<div class="ui-block-b">
-				<a href="#Wedding">
-    					<img  src="images/WeddingThumbnail.png" />
-    					<p>Wedding</p>
-    				</a>
-			</div>
-			<div class="ui-grid-b">
-				<h4>Parties</h4>
-				<div class="ui-block-a">
-					<a href="#DinnerParty">
-    					<img  src="images/DinnerPartyThumb.png" />
-    					<p>Dinner Parties</p>
-    					</a>
-				</div>
-				</div>
-			</div>
-				<div class="ui-block-a">
-					<a href="#BabyShower">
-    						<img  src="images/BabyShowers.png" />
-    						<p>Baby Shower</p>
-    					</a>
-    				</div>
-	
-    				<div class="ui-block-c">
-					<a href="#Birthday">
-    						<img  src="images/BirthdayThumb.png" />
-    						<p>Birthday</p>
-    					</a>
-    				</div>
+		
+		<div class="ui-grid-b">
+
+  <div class="ui-block-a">
+
+    <a href="#Concert">
+    <img src="images/ConcertThumb.png" />
+    <p>Concert</p>
+    </a>
+    
+
+  </div>
+
+  <div class="ui-block-b">
+
+    <a href="#Movies">
+    <img src="images/MoviesThumb.png" />
+    <p>Movies</p>
+    </a>
+
+  </div>
+
+  <div class="ui-block-c">
+
+    <a href="#SportingEvent">
+    <img  src="images/SportingEventsThumb.png" />
+    <p>Sporting Event</p>
+    </a>
+  </div>
+    <H4>Kids Categories</H4>
+
+    <div class="ui-block-a">
+
+    <a href="#KidsEvent">
+    <img  src="images/Kids.png" />
+    <p>Kids Events</p>
+    </a>
+
+</div>
+</div>
+<div class="ui-grid-b">
+  <H4>Formal Events</H4>
+
+    
+    
+    <div class="ui-block-b">
+
+    <a href="#Meeting">
+    <img  src="images/MeetingThumb.png" />
+    <p>Meeting</p>
+    </a>
+ 
+</div>
+<div class="ui-block-b">
+
+    <a href="#BookSigning">
+    <img  src="images/BookSign.png" />
+    <p>Book Signings</p>
+    </a>
+ 
+</div>
+<div class="ui-block-b">
+
+    <a href="#Wedding">
+    <img  src="images/WeddingThumbnail.png" />
+    <p>Wedding</p>
+    </a>
+ 
+</div>
+</div>
+<div class="ui-grid-b">
+<h4>Parties</h4>
+
+<div class="ui-block-a">
+
+    <a href="#DinnerParty">
+    <img  src="images/DinnerPartyThumb.png" />
+    <p>Dinner Parties</p>
+    </a>
+    </div>
+    
+        <div class="ui-block-b">
+
+    <a href="#BabyShower">
+    <img  src="images/BabyShowers.png" />
+    <p>Baby Shower</p>
+    </a>
+    </div>
+
+    <div class="ui-block-c">
+
+    <a href="#Birthday">
+    <img  src="images/BirthdayThumb.png" />
+    <p>Birthday</p>
+    </a>
+    </div>
+</div>
 
 		<div data-role="footer" data-position="fixed" data-theme="e">
 		<div data-role="navbar">
@@ -629,30 +657,31 @@
 			<h1>Click Event</h1>
 		</div>
 		
-		<div data-role="content">
 			<div class="ui-grid-b">
+			
 				<h4>Parties</h4>
 				<div class="ui-block-a">
 					<a href="#DinnerParty">
-    						<img  src="../Gold/images/DinnerPartyThumb.png" />
+    						<img  src="images/DinnerPartyThumb.png" />
     						<p>Dinner Parties</p>
     					</a>
-    				</div>
-			</div>
-		</div>
+    				</div> 
+    				
     				<div class="ui-block-b">
 					<a href="#BabyShower">
-    						<img  src="../Gold/images/BabyShowers.png" />
+    						<img  src="images/BabyShowers.png" />
     						<p>Baby Shower</p>
     					</a>
     				</div>
-		</div>
+			
 				<div class="ui-block-c">
 					<a href="#Birthday">
-    						<img  src="../Gold/images/BirthdayThumb.png" />
+    						<img  src="images/BirthdayThumb.png" />
     						<p>Birthday</p>
     					</a>
 				</div>
+			</div>
+	
 		<div data-role="footer" data-position="fixed" data-theme="e">
 			<div data-role="navbar">
 				<ul>
@@ -661,6 +690,7 @@
 				</ul>
 			</div>
 		</div>
+	</div>
 
 <!-- DinnerParty -->
 	<div data-role="page" id="DinnerParty" data-theme="e">
