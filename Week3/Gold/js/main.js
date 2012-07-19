@@ -2,7 +2,27 @@
 //Cameron Mozie
 //MiU
 //MiU1206
-window.addEventListener("DOMContentLoaded", function () {
+var parseEventForm = function(data) { 
+		//uses data
+		localStorage.setItem("formdata",data)
+	 };
+	 
+$(document).bind('pageinit', function(){
+	
+	var evform = $("#eventForm");
+	evform.validate({
+	invalidHandler: function(form, validator){
+
+},
+submitHandler: function(){
+var data = evform.serializeArray();
+parseEventForm(data);
+
+
+}
+	
+});
+
 
 
     //getElementByIdFunction
@@ -16,9 +36,9 @@ window.addEventListener("DOMContentLoaded", function () {
         var eventGroups = ["--Choose A Catagory--", "Birthday", "Wedding", "Meeting", "BabyShower", "Concert", "Movies", "KidsEvent", "DinnerParty", "RoadTrip", "SportingEvent", "BookSigning"];
         var formTag = document.getElementsByTagName("form"),
             //form tag is array 
-            selectLi = ge("select-choice-1"),
+            //selectLi = ge("select-choice-1"),
             makeSelect = document.createElement("select");
-        makeSelect.setAttribute("id", "groups");
+        makeSelect.setAttribute("id", "select-choice-1");
         for (var i = 0, j = eventGroups.length; i < j; i++) {
             var makeOption = document.createElement("option");
             var optText = eventGroups[i];
@@ -26,7 +46,7 @@ window.addEventListener("DOMContentLoaded", function () {
             makeOption.innerHTML = optText;
             makeSelect.appendChild(makeOption);
         }
-        selectLi.appendChild(makeSelect);
+       // selectLi.appendChild(makeSelect);
 
     }
 
@@ -105,18 +125,18 @@ window.addEventListener("DOMContentLoaded", function () {
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", ge("select-choice-1").value];
-        item.firstName = ["FirstName:", ge("firstName").value];
-        item.lastName = ["LastName:", ge("lastName").value];
-        item.address = ["address:", ge("address").value];
-        item.city = ["City:", ge("city").value];
-        item.state = ["State:", ge("state").value];
-        item.phoneNumber = ["PhoneNumber:", ge("phoneNumber").value];
-        item.email = ["Email:", ge("email").value];
-        item.timeEVent = ["TimeOfEvent:", ge("timeOfEvent").value];
-        item.date = ["DateOfEvent:", ge("dateOfEvent").value];
-        item.textBox = ["TextBox:", ge("textBox").value];
-        item.iq = ["Range:", ge("range").value];
+        item.group = ["Event:", $("select-choice-1").value];
+        item.firstName = ["FirstName:", $("firstName").value];
+        item.lastName = ["LastName:", $("lastName").value];
+        item.address = ["address:", $("address").value];
+        item.city = ["City:", $("city").value];
+        item.state = ["State:", $("state").value];
+        item.phoneNumber = ["PhoneNumber:", $("phoneNumber").value];
+        item.email = ["Email:", $("email").value];
+        item.timeEVent = ["TimeOfEvent:", $("timeOfEvent").value];
+        item.date = ["DateOfEvent:", $("dateOfEvent").value];
+        item.textBox = ["TextBox:", $("textBox").value];
+        item.iq = ["Range:", $("range").value];
         item.checkBox = ["CheckBox:", getCheckboxValue()];
 
 
@@ -148,49 +168,49 @@ window.addEventListener("DOMContentLoaded", function () {
         toggleControls("off");
 
         //populate the form files with the current localStorage values
-        ge("select-choice-1").value = item.group[1];
-        ge("firstName").value = item.firstName[1];
-        ge("lastName").value = item.lastName[1];
-        ge("address").value = item.address[1];
-        ge("city").value = item.city[1];
-        ge("state").value = item.state[1];
-        ge("phoneNumber").value = item.phoneNumber[1];
-        ge("email").value = item.email[1];
-        ge("timeOfEvent").value = item.timeEVent[1];
-        ge("dateOfEvent").value = item.date[1];
-        ge("textBox").value = item.textBox[1];
-        ge("range").value = item.iq[1];
+        $("select-choice-1").value = item.group[1];
+        $("firstName").value = item.firstName[1];
+        $("lastName").value = item.lastName[1];
+        $("address").value = item.address[1];
+        $("city").value = item.city[1];
+        $("state").value = item.state[1];
+        $("phoneNumber").value = item.phoneNumber[1];
+        $("email").value = item.email[1];
+        $("timeOfEvent").value = item.timeEVent[1];
+        $("dateOfEvent").value = item.date[1];
+        $("textBox").value = item.textBox[1];
+        $("range").value = item.iq[1];
 
-        if (ge("Monday").value == item.checkBox[1]) {
-            ge("Monday").setAttribute("checked", "checked");
-        }
-
-
-        if (ge("Tuesday").value == item.checkBox[1]) {
-            ge("Tuesday").setAttribute("checked", "checked");
-        }
-        if (ge("Wednesday").value == item.checkBox[1]) {
-            ge("Wednesday").setAttribute("checked", "checked");
-        }
-        if (ge("Thursday").value == item.checkBox[1]) {
-            ge("Thursday").setAttribute("checked", "checked");
-        }
-        if (ge("Friday").value == item.checkBox[1]) {
-            ge("Friday").setAttribute("checked", "checked");
+        if ($("Monday").value == item.checkBox[1]) {
+            $("Monday").setAttribute("checked", "checked");
         }
 
-        if (ge("Saturday").value == item.checkBox[1]) {
-            ge("Saturday").setAttribute("checked", "checked");
+
+        if ($("Tuesday").value == item.checkBox[1]) {
+            $("Tuesday").setAttribute("checked", "checked");
+        }
+        if ($("Wednesday").value == item.checkBox[1]) {
+            $("Wednesday").setAttribute("checked", "checked");
+        }
+        if ($("Thursday").value == item.checkBox[1]) {
+            $("Thursday").setAttribute("checked", "checked");
+        }
+        if ($("Friday").value == item.checkBox[1]) {
+            $("Friday").setAttribute("checked", "checked");
         }
 
-        if (ge("Sunday").value == item.checkBox[1]) {
-            ge("Sunday").setAttribute("checked", "checked");
+        if ($("Saturday").value == item.checkBox[1]) {
+            $("Saturday").setAttribute("checked", "checked");
+        }
+
+        if ($("Sunday").value == item.checkBox[1]) {
+            $("Sunday").setAttribute("checked", "checked");
         }
 
         //remove the initial listener from the input "save contact"       
         saveLink.removeEventListener("click", storeData);
         //change submit button value to edit button
-        ge("saveEvent").value = "Edit Contact";
+        $("saveEvent").value = "Edit Contact";
         var editSubmit = ge("saveEvent");
         //save the key value established in this function as a property of the edit Submit event
         //editSubmit.addEventListener("click", validate);
@@ -260,7 +280,7 @@ window.addEventListener("DOMContentLoaded", function () {
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
         document.body.appendChild(makeDiv);
-        ge("items").style.display = "block";
+        //$("items").style.display = "block";
         for (var i = 0, len = localStorage.length; i < len; i++) {
             var makeLi = document.createElement("li");
             var linksLi = document.createElement("li");
@@ -473,9 +493,9 @@ window.addEventListener("DOMContentLoaded", function () {
     var clearLink = ge("clearStoredData");
     clearLink.addEventListener("click", clearLocal);
     var saveLink = ge("saveEvent");
-    saveLink.addEventListener("click");
+    saveLink.addEventListener("click",storeData);
     var editSubmit = ge("saveEvent");
-    editSubmit.addEventListener("click");
+    editSubmit.addEventListener("click",getData);
     //var searchB = ge("searchButton");
     //searchB.addEventListener("click", getSearch);
 

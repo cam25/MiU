@@ -1,4 +1,4 @@
-$(document).bind("pageinit"()({
+$(document).bind('pageinit', function(){
 	var evform = $("#eventForm");
 	evform.validate();
 	

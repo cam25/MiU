@@ -17,6 +17,9 @@
 	<!-- StyleSheets under here -->
 	<link href="./css/style.css" rel="stylesheet" type="text/css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
@@ -30,7 +33,7 @@
 		</div>
 		<div data-role="content" >
 			<img src="../Gold/images/CTA4.png"/>
-			<a href="addItem2.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
+			<a href="#Additem2" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
 			<a href="#ThumbnailGrid" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To View Events</a>
 			<a href="#rss" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Weather Report</a>
 			<h4> Browse By Event Category:</h4>	
@@ -50,6 +53,150 @@
 			</div>
 		</div>
 	</div>
+	<!--Additem2.html-->
+	<div data-role="page" id="Additem2" data-add-back-btn="true" data-theme="e">
+	
+	<div data-role="content" >
+
+			
+			<h1>Event Scheduling</h1>
+			
+        <nav>
+            <a href="#" id="clearStoredData">Clear Data</a>
+            <a href="#" data-ajax="false" id="displayStoredData" >Display Data</a>
+            <a href="../Gold/additem2.html" id="addNew" style="display:none;" data-ajax="false">Add New</a>
+        </nav>
+        <form action="" method="post" id="eventForm">
+            <div data-role="fieldcontain" id="eventFieldset">
+            <ul id="errors"></ul>
+                <!-- Drop Down Menu -->
+                	<div data-role="fieldcontain">
+   <h4>Choose A Category</h4>             	
+   <label for="select-choice-1" class="select"></label>
+   <select name="select-choice-1" id="select-choice-1" data-native-menu="false" class="required">
+      <option data-placeholder="true">Please Select A Category</option>
+      <option value="Birthday">Birthday</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Meeting">Meeting</option>
+      <option value="BabyShower">Baby Shower</option>
+      <option value="Concert">Concert</option>
+      <option value="Movies">Movies</option>
+      <option value="KidsEvent">Kids Event</option>
+      <option value="DinnerPary">Dinner Party</option>
+      <option value="RoadTrip">Road Trip</option>
+      <option value="SportingEvent">Sporting Event</option>
+      <option value="BookSigning">Book Signing</option>
+   </select>
+</div>
+                
+                <!-- Days To Schedule -->
+                <div data-role="fieldcontain" >
+                <fieldset data-role="controlgroup">
+                <h4>Choose a day:</h4>
+                
+                        <label for="Monday">Monday</label>
+                        <input type="checkbox" name="day" value="Monday" id="Monday" />
+
+                        <label for="Tuesday">Tuesday</label>
+                        <input type="checkbox" name="day" value="Tuesday" id="Tuesday" />
+
+                        <label for="Wednesday">Wednesday</label>
+                        <input type="checkbox" name="day" value="Wednesday" id="Wednesday" />
+
+                        <label for="Thursday">Thursday</label>
+                        <input type="checkbox" name="day" value="Thursday" id="Thursday" />
+
+                        <label for="Friday">Friday</label>
+                        <input type="checkbox" name="day" value="Friday" id="Friday" />
+
+
+                        <label for="Saturday">Saturday</label>
+                        <input type="checkbox" name="day" value="Saturday" id="Saturday" />
+
+                        <label for="Sunday">Sunday</label>
+                        <input type="checkbox" name="day" value="Sunday" id="Sunday" />
+                </fieldset>
+                </div>
+                <!-- Priority Meter -->
+                <div data-role="fieldcontain">
+                <h2>Priority Meter:</h2>
+                <input type="range" name="points" min="1" max="10" value="range" id="range" />
+                </div>
+                
+                <!-- Contact Info -->
+                <div data-role="fieldcontain">
+                <h2>Event Time/Day:</h2>
+
+                        <label for="timeOfEvent">Time Of Event</label>
+                        <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" class="required" />
+                        
+                        <label for="mydate">Some Date</label>
+
+                        <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "calbox", 						"calUsePickers": true, "calNoHeader": true}' />  
+                </div>                  
+                <div data-role="fieldcontain">
+                <h2>Contact Person:</h2>
+               
+                        <label for="firstName">First Name</label>
+                        <input type="text" name="First name" id="firstName" class="required" />
+
+                        <label for="lastName">Last Name</label>
+                        <input type="text" name="Last name" id="lastName" class="required" />
+
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" class="required"  />
+
+
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" class="required" />
+
+
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" class="required"  />
+
+
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" class="required" />
+
+
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" class="required-email" />
+
+                </div>
+                
+                
+        
+                <!-- Comments -->
+                <div data-role="fieldcontain">
+                <h2>Comments:</h2>
+                <label for="textBox"></label>
+                <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
+                
+            </div>
+            
+            <!-- Buttons -->
+            <div data-role="fieldcontain">
+            <input type="submit" id="saveEvent" value="Save" />
+            
+            <input type="reset" id="resetButton" value="Reset" />
+            </div>
+            
+            </div>
+        </form>
+        
+        
+			
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+			</div>
+	</div>
+	
 	<!--NEWS FEED-->
 	 <div data-role="page" id="rss" data-add-back-btn="true" data-theme="e">
 
@@ -71,8 +218,6 @@
 			</div>
 			</div>
 	 </div>
-	
-	
 <!-- ThumbnailGrid -->
 	<div data-role="page" id="ThumbnailGrid" data-theme="b">
 		<div data-role="header" data-theme="e"><a href="../Gold/index.html">Back</a>
@@ -83,19 +228,19 @@
 			<div class="ui-grid-b">		
 				<div class="ui-block-a">
 					<a href="#Concert">
-    						<img src="../Gold/images/ConcertThumb.png" />
+    						<img src="images/ConcertThumb.png" />
     						<p>Concert</p>
     					</a>
 				</div>	
 				<div class="ui-block-b">
 					<a href="#Movies">
-    						<img src="../Gold/images/MoviesThumb.png" />
+    						<img src="images/MoviesThumb.png" />
     						<p>Movies</p>
     					</a>
 				</div>
   				<div class="ui-block-c">
 					<a href="#SportingEvent">
-    						<img  src="../Gold/images/SportingEventsThumb.png" />
+    						<img  src="images/SportingEventsThumb.png" />
     						<p>Sporting Event</p>
     					</a>
   				</div>
@@ -103,53 +248,58 @@
     			<h4>Kids Categories</h4>
     			<div class="ui-block-a">
 				<a href="#KidsEvent">
-    					<img  src="../Gold/images/Kids.png" />
+    					<img  src="images/Kids.png" />
     					<p>Kids Events</p>
     				</a>
+    				
 			</div>
 		</div>
 			<div class="ui-grid-b">
   				<h4>Formal Events</h4>
 				<div class="ui-block-b">
 					<a href="#Meeting">
-    						<img  src="../Gold/images/MeetingThumb.png" />
+    						<img  src="images/MeetingThumb.png" />
     						<p>Meeting</p>
     					</a>
+    					
 				</div>
 			<div class="ui-block-b">
 				<a href="#BookSigning">
-    					<img  src="../Gold/images/BookSign.png" />
+    					<img  src="images/BookSign.png" />
     					<p>Book Signings</p>
     				</a>
 			</div>
 			<div class="ui-block-b">
 				<a href="#Wedding">
-    					<img  src="../Gold/images/WeddingThumbnail.png" />
+    					<img  src="images/WeddingThumbnail.png" />
     					<p>Wedding</p>
     				</a>
- 			</div>
+			</div>
 			<div class="ui-grid-b">
 				<h4>Parties</h4>
 				<div class="ui-block-a">
 					<a href="#DinnerParty">
-    					<img  src="../Gold/images/DinnerPartyThumb.png" />
+    					<img  src="images/DinnerPartyThumb.png" />
     					<p>Dinner Parties</p>
     					</a>
-    				</div>
-				<div class="ui-block-b">
+				</div>
+				</div>
+			</div>
+				<div class="ui-block-a">
 					<a href="#BabyShower">
-    						<img  src="../Gold/images/BabyShowers.png" />
+    						<img  src="images/BabyShowers.png" />
     						<p>Baby Shower</p>
     					</a>
     				</div>
+	
     				<div class="ui-block-c">
 					<a href="#Birthday">
-    						<img  src="../Gold/images/BirthdayThumb.png" />
+    						<img  src="images/BirthdayThumb.png" />
     						<p>Birthday</p>
     					</a>
     				</div>
-    			</div>
-    		</div>
+	</div>
+	
 		<div data-role="footer" data-position="fixed" data-theme="e">
 		<div data-role="navbar">
 			<ul>
@@ -158,8 +308,7 @@
 			</ul>
 		</div>
 		</div>
-		</div>
-	
+
 <!-- Entertainment -->
 	<div data-role="page" id="Entertainment" data-theme="b">
 		<div data-role="header" data-theme="e"><a href="#Home" id="Home">Back</a>
@@ -300,7 +449,7 @@
 				<h4>Kids Categories</h4>
 				<div class="ui-block-a">
 					<a href="#KidsEvent">
-    						<img  src="../Bronze/images/Kids.png" />
+    						<img  src="images/Kids.png" />
     						<p>Kids Events</p>
     					</a>
 				</div>
@@ -489,21 +638,21 @@
     						<p>Dinner Parties</p>
     					</a>
     				</div>
+			</div>
+		</div>
     				<div class="ui-block-b">
 					<a href="#BabyShower">
     						<img  src="../Gold/images/BabyShowers.png" />
     						<p>Baby Shower</p>
     					</a>
     				</div>
+		</div>
 				<div class="ui-block-c">
 					<a href="#Birthday">
     						<img  src="../Gold/images/BirthdayThumb.png" />
     						<p>Birthday</p>
     					</a>
 				</div>
-			</div>
-		</div>
-
 		<div data-role="footer" data-position="fixed" data-theme="e">
 			<div data-role="navbar">
 				<ul>
@@ -512,8 +661,7 @@
 				</ul>
 			</div>
 		</div>
-	</div>
-	
+
 <!-- DinnerParty -->
 	<div data-role="page" id="DinnerParty" data-theme="e">
 		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Parties" id="Home">Back</a>
@@ -543,7 +691,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 <!-- BabyShower -->
 	<div data-role="page" id="BabyShower" data-theme="e">
 		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#Parties" id="Home">Back</a>
@@ -621,11 +769,21 @@
 			</div>
 		</div>
 	</div>
-	</div>
-	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
-	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+	<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/libs/jstorage.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>	
 	<script src="./js/RssFeed.js"></script>
 	<script src="./js/RssFeeder.js"></script>
+	<script type="text/javascript" src="../Gold/js/JSON.js"></script>
+	<script type="text/javascript" src="../Gold/js/main3.js"></script>
+	
+
 </body>
 </html>
 		
