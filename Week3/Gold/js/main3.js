@@ -1,6 +1,14 @@
 var parseEventForm = function(data) { 
         //uses data
         localStorage.setItem("formdata",data);
+        localStorage.setItem("firstName",$("#firstName".value));
+        localStorage.getItem("formdata",data);
+        $.jStorage.storageSize()
+        console.log(localStorage);
+
+        console.log(data);
+  
+        console.log(firstName);
      };
      
 $(document).bind('pageinit', function(){

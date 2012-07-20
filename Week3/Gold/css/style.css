@@ -5,3 +5,9 @@
 }
 </style>
 
+label.error {
+display:block;
+margin:10px 0;
+color:red;
+}
+
