@@ -67,8 +67,8 @@
 			<p>Required Fields Have *</p>
 		<div data-role="fieldcontain">	
         <nav>
-          <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" data-theme="b">Clear Saved Events</a>
-            <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" data-theme="b">Display Saved Events</a>
+          <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" id="clearStoredData" data-theme="b">Clear Saved Events</a>
+            <a href="#displayPage" data-transition="slidefade" data-role="button" data-ajax="false" id="displayStoredData" data-theme="b">Display Saved Events</a>
             <a href="#addItem2" id="addNew" style="display:none;" data-ajax="false">Add New</a>
         </nav>
 		</div><!--Nav Closed-->
@@ -80,7 +80,7 @@
                 	<div data-role="fieldcontain">
    <h4>Choose A Category</h4>             	
    <label for="select-choice-1" class="select"></label>
-   <select name="select-choice-1" id="select-choice-1" data-native-menu="false" class="required">
+   <select name="select-choice-1" id="groups" data-native-menu="false" class="required">
       <option data-placeholder="true">Please Select A Category</option>
       <option value="Birthday">Birthday</option>
       <option value="Wedding">Wedding</option>
@@ -798,6 +798,27 @@
 		<div data-role="content">		
 			<p> This app was designed with the user in mind. This app allows the user to plan a range of events and set the priority of the event from high to low depending on the urgency or importance of the user. This app is currently in beta testing phase but will be official shortly. Any bug please report them to cam25@fullsail.edu. Thanks (Special Event Planner App Copyright 2012)</p>
 		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+	<div data-role="page" id="displayPage" data-theme="e">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#parties" >Back</a>
+			<h1>Upcoming Event</h1>
+		</div><!--header close-->
+	
+		
+	
+	
+	
+	
+	
 		<div data-role="footer" data-position="fixed" data-theme="e">
 			<div data-role="navbar">
 				<ul>

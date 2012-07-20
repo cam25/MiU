@@ -1,15 +1,4 @@
-var parseEventForm = function(data) { 
-        //uses data
-        localStorage.setItem("formdata",data);
-        localStorage.setItem("firstName",$("#firstName".value));
-        localStorage.getItem("formdata",data);
-        $.jStorage.storageSize()
-        console.log(localStorage);
 
-        console.log(data);
-  
-        console.log(firstName);
-     };
      
 $(document).bind('pageinit', function(){
     
@@ -21,25 +10,31 @@ $(document).bind('pageinit', function(){
 submitHandler: function(){
 var data = evform.serializeArray();
 parseEventForm(data);
+console.log(data);
 
 
 }
     
 });
 
+function gE(x) {
+        var theElement = document.getElementById(x);
+        return theElement;
+    }
+
 function toggleControls(tag) {
         switch (tag) {
         case "on":
-            $("eventForm").style.display = "none";
-            $("clearStoredData").style.display = "inline";
-            $("displayStoredData").style.display = "none";
-            $("addNew").style.display = "inline";
+            gE("eventForm").style.display = "none";
+            gE("clearStoredData").style.display = "inline";
+            gE("displayStoredData").style.display = "none";
+            gE("addNew").style.display = "inline";
             break;
         case "off":
-            $("eventForm").style.display = "block";
-            $("clearStoredData").style.display = "inline";
-            $("displayStoredData").style.display = "inline";
-            $("addNew").style.display = "none";
+            gE("eventForm").style.display = "block";
+            gE("clearStoredData").style.display = "inline";
+            gE("displayStoredData").style.display = "inline";
+            gE("addNew").style.display = "none";
 
             break;
         default:
@@ -65,19 +60,19 @@ function storeData(key) {
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", $("select-choice-1").value];
-        item.firstName = ["FirstName:", $("firstName").value];
-        item.lastName = ["LastName:", $("lastName").value];
-        item.address = ["address:", $("address").value];
-        item.city = ["City:", $("city").value];
-        item.state = ["State:", $("state").value];
-        item.phoneNumber = ["PhoneNumber:", $("phoneNumber").value];
-        item.email = ["Email:", $("email").value];
-        item.timeEVent = ["TimeOfEvent:", $("timeOfEvent").value];
-        item.date = ["DateOfEvent:", $("dateOfEvent").value];
-        item.textBox = ["TextBox:", $("textBox").value];
-        item.iq = ["Range:", $("range").value];
-        item.checkBox = ["CheckBox:", $("checkbox").value];
+        item.group = ["Event:", gE("groups").value];
+        item.firstName = ["FirstName:", gE("firstName").value];
+        item.lastName = ["LastName:", gE("lastName").value];
+        item.address = ["address:", gE("address").value];
+        item.city = ["City:", gE("city").value];
+        item.state = ["State:", gE("state").value];
+        item.phoneNumber = ["PhoneNumber:", gE("phoneNumber").value];
+        item.email = ["Email:", gE("email").value];
+        item.timeEVent = ["TimeOfEvent:", gE("timeOfEvent").value];
+        item.date = ["DateOfEvent:", gE("dateOfEvent").value];
+        item.textBox = ["TextBox:", gE("textBox").value];
+        item.iq = ["Range:", gE("range").value];
+        item.checkBox = ["CheckBox:", gE("checkbox").value];
 
 
         //save data to local storage: Use Stringify to convert our object to a string.
@@ -103,55 +98,55 @@ function storeData(key) {
         //Grab the data from our item from local storage.
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
-        var saveLink = $("saveEvent");
+        var saveLink = gE("saveEvent");
         //shows the form
         toggleControls("off");
 
         //populate the form files with the current localStorage values
-        $("select-choice-1").value = item.group[1];
-        $("firstName").value = item.firstName[1];
-        $("lastName").value = item.lastName[1];
-        $("address").value = item.address[1];
-        $("city").value = item.city[1];
-        $("state").value = item.state[1];
-        $("phoneNumber").value = item.phoneNumber[1];
-        $("email").value = item.email[1];
-        $("timeOfEvent").value = item.timeEVent[1];
-        $("dateOfEvent").value = item.date[1];
-        $("textBox").value = item.textBox[1];
-        $("range").value = item.iq[1];
+        gE("groups").value = item.group[1];
+        gE("firstName").value = item.firstName[1];
+        gE("lastName").value = item.lastName[1];
+        gE("address").value = item.address[1];
+        gE("city").value = item.city[1];
+        gE("state").value = item.state[1];
+        gE("phoneNumber").value = item.phoneNumber[1];
+        gE("email").value = item.email[1];
+        gE("timeOfEvent").value = item.timeEVent[1];
+        gE("dateOfEvent").value = item.date[1];
+        gE("textBox").value = item.textBox[1];
+        gE("range").value = item.iq[1];
 
-        if ($("Monday").value == item.checkBox[1]) {
-            $("Monday").setAttribute("checked", "checked");
-        }
-
-
-        if ($("Tuesday").value == item.checkBox[1]) {
-            $("Tuesday").setAttribute("checked", "checked");
-        }
-        if ($("Wednesday").value == item.checkBox[1]) {
-            $("Wednesday").setAttribute("checked", "checked");
-        }
-        if ($("Thursday").value == item.checkBox[1]) {
-            $("Thursday").setAttribute("checked", "checked");
-        }
-        if ($("Friday").value == item.checkBox[1]) {
-            $("Friday").setAttribute("checked", "checked");
+        if (gE("Monday").value == item.checkBox[1]) {
+            gE("Monday").setAttribute("checked", "checked");
         }
 
-        if ($("Saturday").value == item.checkBox[1]) {
-            $("Saturday").setAttribute("checked", "checked");
+
+        if (gE("Tuesday").value == item.checkBox[1]) {
+            gE("Tuesday").setAttribute("checked", "checked");
+        }
+        if (gE("Wednesday").value == item.checkBox[1]) {
+            gE("Wednesday").setAttribute("checked", "checked");
+        }
+        if (gE("Thursday").value == item.checkBox[1]) {
+            gE("Thursday").setAttribute("checked", "checked");
+        }
+        if (gE("Friday").value == item.checkBox[1]) {
+            gE("Friday").setAttribute("checked", "checked");
         }
 
-        if ($("Sunday").value == item.checkBox[1]) {
-            $("Sunday").setAttribute("checked", "checked");
+        if (gE("Saturday").value == item.checkBox[1]) {
+            gE("Saturday").setAttribute("checked", "checked");
+        }
+
+        if (gE("Sunday").value == item.checkBox[1]) {
+            gE("Sunday").setAttribute("checked", "checked");
         }
 
         //remove the initial listener from the input "save contact"       
         saveLink.removeEventListener("click", storeData);
         //change submit button value to edit button
-        $("saveEvent").value = "Edit Contact";
-        var editSubmit = $("saveEvent");
+        gE("saveEvent").value = "Edit Contact";
+        var editSubmit = gE("saveEvent");
         //save the key value established in this function as a property of the edit Submit event
         //editSubmit.addEventListener("click", validate);
         editSubmit.key = this.key;
@@ -219,8 +214,8 @@ function storeData(key) {
         makeDiv.setAttribute("id", "items");
         var makeList = document.createElement("ul");
         makeDiv.appendChild(makeList);
-        document.body.appendChild(makeDiv);
-        //$("items").style.display = "block";
+        document.getElementById("displayPage").appendChild(makeDiv);
+        gE("items").style.display = "block";
         for (var i = 0, len = localStorage.length; i < len; i++) {
             var makeLi = document.createElement("li");
             var linksLi = document.createElement("li");
@@ -256,17 +251,26 @@ function storeData(key) {
             return false;
         }
     }
+    var parseEventForm = function(data) { 
+        //uses data
+        
+        storeData();
+        
+
+  
+     };
+    
 
 
-//var displayLink = $("displayStoredData");
-//    displayLink.addEventListener("click", getData);
-//    var clearLink = $("clearStoredData");
-//    clearLink.addEventListener("click", clearLocal);
-//    var saveLink = $("saveEvent");
-//    saveLink.addEventListener(storeData);
-//    var editSubmit = $("saveEvent");
-//    editSubmit.addEventListener("click",getData);
-//
+var displayLink = gE("displayStoredData");
+    displayLink.addEventListener("click", getData);
+    var clearLink = gE("clearStoredData");
+    clearLink.addEventListener("click", clearLocal);
+    var saveLink = gE("saveEvent");
+    saveLink.addEventListener(storeData);
+    var editSubmit = gE("saveEvent");
+    editSubmit.addEventListener("click",getData);
+
 });
 
 
@@ -275,24 +279,24 @@ function storeData(key) {
 //    console.log(data)
 //};
 //
-//$(document).bind('pageinit', function(){
+//gE(document).bind('pageinit', function(){
 //
-//    var evForm = $("#eventForm"),
-//        errorslink = $("#errorlink");
+//    var evForm = gE("#eventForm"),
+//        errorslink = gE("#errorlink");
 //    evForm.validate({
 //        invalidHandler: function(form, validator){
 //            errorslink.click();
 //            var html = '';
 //             console.log(validator.submitted);
 //            for(var key in validator.submitted){
-//                var label = $('label[for^="'+ key +'"]').not('[generated]');  // error with a label except those generated.
+//                var label = gE('label[for^="'+ key +'"]').not('[generated]');  // error with a label except those generated.
 //                console.log(label.text());
 //                var legend = label.closest('fieldset').find('.ui-controlgroup-label');  
 //                var fieldName = legend.length ? legend.text() : label.text();
 //                console.log(fieldName);
 //                html += '<li>'+ fieldName +'</li>';
 //            };
-//            $("#errorslink ul").html(html);
+//            gE("#errorslink ul").html(html);
 //        },
 //        submitHandler: function() {
 //            var data = evForm.serializeArray();
