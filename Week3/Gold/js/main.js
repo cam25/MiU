@@ -125,8 +125,8 @@ parseEventForm(data);
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", ge("select-choice-1").value];
-        item.firstName = ["FirstName:", ge("firstName").value];
+        item.group = ["Event:", $("select-choice-1").value];
+        item.firstName = ["FirstName:", $("firstName").value];
         item.lastName = ["LastName:", $("lastName").value];
         item.address = ["address:", $("address").value];
         item.city = ["City:", $("city").value];
@@ -493,7 +493,7 @@ parseEventForm(data);
     var clearLink = ge("clearStoredData");
     clearLink.addEventListener("click", clearLocal);
     var saveLink = ge("saveEvent");
-    
+    saveLink.addEventListener(storeData);
     var editSubmit = ge("saveEvent");
     editSubmit.addEventListener("click",getData);
     //var searchB = ge("searchButton");
