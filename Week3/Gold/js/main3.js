@@ -232,7 +232,7 @@ function storeData(key) {
             var obj = JSON.parse(value);
             var makeOtherList = document.createElement("ul");
             makeLi.appendChild(makeOtherList);
-            //getImage(obj.group[1], makeOtherList);
+            getImage(obj.group[1], makeOtherList);
             for (var tag in obj) {
                 var makeOtherLi = document.createElement("li");
                 makeOtherList.appendChild(makeOtherLi);
