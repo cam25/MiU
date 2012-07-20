@@ -273,10 +273,10 @@ window.addEventListener("DOMContentLoaded", function () {
             var makeOtherList = document.createElement("ul");
             makeLi.appendChild(makeOtherList);
             getImage(item.group[1], makeOtherList);
-            for (var tag in obj) {
+            for (var tag in item) {
                 var makeOtherLi = document.createElement("li");
                 makeOtherList.appendChild(makeOtherLi);
-                var optSubText = obj[tag][0] + " " + obj[tag][1];
+                var optSubText = item[tag][0] + " " + obj[tag][1];
                 makeOtherLi.innerHTML = optSubText;
                 makeOtherList.appendChild(linksLi);
             }
