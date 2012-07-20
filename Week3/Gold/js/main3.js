@@ -1,4 +1,10 @@
+var parseEventForm = function(data) { 
+        //uses data
+        
+        
 
+  
+     };
      
 $(document).bind('pageinit', function(){
     
@@ -251,14 +257,7 @@ function storeData(key) {
             return false;
         }
     }
-    var parseEventForm = function(data) { 
-        //uses data
-        
-        storeData();
-        
-
-  
-     };
+    
     
 
 
