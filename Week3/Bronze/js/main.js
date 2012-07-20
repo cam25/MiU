@@ -269,10 +269,10 @@ window.addEventListener("DOMContentLoaded", function () {
             var key = localStorage.key(i);
             var value = localStorage.getItem(key);
             //convert string from local storage value to an object by using json.Parse
-            var obj = JSON.parse(value);
+            var item = JSON.parse(value);
             var makeOtherList = document.createElement("ul");
             makeLi.appendChild(makeOtherList);
-            getImage(obj.group[1], makeOtherList);
+            getImage(item.group[1], makeOtherList);
             for (var tag in obj) {
                 var makeOtherLi = document.createElement("li");
                 makeOtherList.appendChild(makeOtherLi);
