@@ -25,16 +25,16 @@ function gE(x) {
 function toggleControls(tag) {
         switch (tag) {
         case "on":
-            gE("eventForm").style.display = "none";
-            gE("clearStoredData").style.display = "inline";
-            gE("displayStoredData").style.display = "none";
-            gE("addNew").style.display = "inline";
+            gE("eventForm").style.display = "block";
+            gE("clearStoredData").style.display = "block";
+            gE("displayStoredData").style.display = "block";
+            //gE("addNew").style.display = "inline";
             break;
         case "off":
             gE("eventForm").style.display = "block";
-            gE("clearStoredData").style.display = "inline";
-            gE("displayStoredData").style.display = "inline";
-            gE("addNew").style.display = "none";
+            gE("clearStoredData").style.display = "block";
+            gE("displayStoredData").style.display = "block";
+            //gE("addNew").style.display = "none";
 
             break;
         default:
@@ -86,9 +86,9 @@ function storeData(key) {
     function autoFillData() {
         //The actual JSON object data required for this to work is coming from our json.js file. which is loaded from our addItem.html file.
         //Store the JSON OBJECT in local storage.
-        for (var n in JSON) {
+        for (var n in json) {
             var id = Math.floor(Math.random() * 1000000001);
-            localStorage.setItem(id, JSON.stringify(JSON[n]));
+            localStorage.setItem(id, JSON.stringify(json[n]));
 
         }
 
@@ -202,7 +202,6 @@ function storeData(key) {
         imageLi.appendChild(newImage);
 
     }
-
     function getData() {
         toggleControls("on");
         if (localStorage.length === 0) {
@@ -233,12 +232,13 @@ function storeData(key) {
                 var optSubText = obj[tag][0] + " " + obj[tag][1];
                 makeOtherLi.innerHTML = optSubText;
                 makeOtherList.appendChild(linksLi);
+                
             }
             makeItemLinks(localStorage.key(i), linksLi); // create our edit and delete buttons/links for each item in local storage
         }
-
+        
     }
-
+    
     //get image for right catagory being displayed.
 
     function clearLocal() {
@@ -253,12 +253,10 @@ function storeData(key) {
     }
     var parseEventForm = function(data) { 
         //uses data
-       
-        storeData();
-	console.log(localStorage);        
+       storeData();
+	console.log(localStorage); 
         
      };
-    
     
     
 
@@ -269,8 +267,8 @@ var displayLink = gE("displayStoredData");
     clearLink.addEventListener("click", clearLocal);
 //    var saveLink = gE("saveEvent");
 //    saveLink.addEventListener(storeData);
-    var editSubmit = gE("saveEvent");
-    editSubmit.addEventListener("click",getData);
+    //var editSubmit = gE("saveEvent");
+   //editSubmit.addEventListener("click",getData);
 
 });
 
