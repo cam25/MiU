@@ -253,7 +253,7 @@ function storeData(key) {
     }
     var parseEventForm = function(data) { 
         //uses data
-        localStorage.getItem('formdata');
+       
         storeData();
 	console.log(localStorage);        
         
@@ -269,8 +269,8 @@ var displayLink = gE("displayStoredData");
     clearLink.addEventListener("click", clearLocal);
 //    var saveLink = gE("saveEvent");
 //    saveLink.addEventListener(storeData);
-//    var editSubmit = gE("saveEvent");
-//    editSubmit.addEventListener("click",getData);
+    var editSubmit = gE("saveEvent");
+    editSubmit.addEventListener("click",getData);
 
 });
 
