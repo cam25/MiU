@@ -19,6 +19,8 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+	
+	
 
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
@@ -61,26 +63,27 @@
 			<h1>Add Your Events</h1>
 	</div><!--header close-->
 	
-	<div data-role="content" >
-
-			
-			<p>Required Fields Have *</p>
-		<div data-role="fieldcontain">	
+	<div data-role="content">
+				
+				<div data-role="fieldcontain">
+				<p>Required Fields Have *</p>
         <nav>
-          <a href="#" data-transition="slidefade" data-role="button" data-ajax="false" id="clearStoredData" data-theme="b">Clear Saved Events</a>
-            <a href="#displayPage" data-transition="slidefade" data-role="button" data-ajax="false" id="displayStoredData" data-theme="b">Display Saved Events</a>
-            <a href="#addItem2" id="addNew" style="display:none;" data-ajax="false">Add New</a>
+        <div class="ui-grid-a">
+	<div class="ui-block-a"><a href="#" data-transition="slidefade" data-role="button" data-mini="true"  data-ajax="false" id="clearStoredData" data-theme="b">Clear Event </a></div>
+	<div class="ui-block-b"><a href="#displayPage" data-transition="slidefade" data-role="button" data-mini="true"  data-ajax="false" id="displayStoredData" data-theme="b">Display Events</a></div>	   
+</div>
+        <a href="#addItem2" id="addNew" style="display:none;" data-ajax="false">Add New</a>
         </nav>
 		</div><!--Nav Closed-->
 		
+		
         <form action="" method="post" id="eventForm">
             <div data-role="fieldcontain" id="eventFieldset">
-            <ul id="errors"></ul>
                 <!-- Drop Down Menu -->
                 	<div data-role="fieldcontain">
-   <h4>Choose A Category</h4>             	
+   <h3>Select An Event:</h3>             	
    <label for="select-choice-1" class="select"></label>
-   <select name="select-choice-1" id="groups" data-native-menu="false" class="required">
+   <select name="select-choice-1" id="groups" data-native-menu="false"  class="required">
       <option data-placeholder="true">Please Select A Category</option>
       <option value="Birthday">Birthday</option>
       <option value="Wedding">Wedding</option>
@@ -95,10 +98,11 @@
       <option value="BookSigning">Book Signing</option>
    </select>
                 	</div><!--Dropdown Closed-->
+
                 
                 <!-- Days To Schedule -->
-                <div data-role="fieldcontain" data-theme="b">
-                <fieldset data-role="controlgroup">
+                <!--<div data-role="fieldcontain" data-theme="b">
+                <fieldset data-role="controlgroup" data-mini="true">
                 <h4>Choose a day:</h4>
                 
                         <label for="Monday">Monday</label>
@@ -123,54 +127,55 @@
                         <label for="Sunday">Sunday</label>
                         <input type="checkbox" name="day" value="Sunday" id="Sunday" />
                 </fieldset>
-                </div><!--Dayschedule Closed-->
-                
+                </div>--><!--Dayschedule Closed-->
+              
                 
                 <!-- Priority Meter -->
                 <div data-role="fieldcontain">
-                <h2>Priority Meter:</h2>
-                <input type="range" name="points" min="1" max="10" value="range" id="range" />
+                <h3>Priority Meter:</h3>
+                <input type="range" name="points" min="1" max="10" value="range" data-highlight="true" id="range" placeholder="Slide" />
                 </div><!--Priority Closed-->
                 
                 <!-- Contact Info -->
                 <div data-role="fieldcontain">
-                <h2>Event Time/Day:</h2>
+                <h3>Event Time/Day:</h3>
 
-                        <label for="timeOfEvent">Time Of Event*</label>
-                        <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" class="required" />
+                        <!--<label for="timeOfEvent">Time Of Event*</label>
+                        <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" class="required" />-->
                         
-                        <label for="mydate">Select A Date*</label>
+                        <label for="mydate">Select A Date/Time</label>
 
-                        <input name="mydate" id="mydate" type="date" data-role="datebox" data-options='{"mode": "calbox", 						"calUsePickers": true, "calNoHeader": true}' />  
+                        <input name="mydate" id="mydate" type="date" data-role="datebox"
+   data-options='{"mode": "slidebox", "overrideDateFormat":"%Y-%m-%d %I:%M%p", "overrideTimeFormat":12, "overrideSlideFieldOrder":["y","m","d","h","i"]}' placeholder="Click Icon To Add Date/Time" />  
                 </div><!--Time/Day Close-->
                                   
-                <div data-role="fieldcontain">
-                <h2>Contact Person:</h2>
+                <div data-role="fieldcontain" data-mini="true">
+                <h3>Contact Person:</h3>
                
                         <label for="firstName">*First Name</label>
-                        <input type="text" name="First name" id="firstName" class="required" />
+                        <input type="text" name="First name" id="firstName" placeholder="John"  class="required" />
 
                         <label for="lastName">*Last Name</label>
-                        <input type="text" name="Last name" id="lastName" class="required" />
+                        <input type="text" name="Last name" id="lastName" placeholder="Smith" class="required" />
 
                         <label for="address">Address</label>
-                        <input type="text" name="address" id="address"  />
+                        <input type="text" name="address" id="address" placeholder="333 West Grade St"  />
 
 
                         <label for="city">City</label>
-                        <input type="text" name="city" id="city"  />
+                        <input type="text" name="city" id="city" placeholder="Baltimore"  />
 
 
                         <label for="state">State</label>
-                        <input type="text" name="state" id="state"   />
+                        <input type="text" name="state" id="state" placeholder="MD"  />
 
 
                         <label for="phoneNumber">Phone Number*</label>
-                        <input type="text" name="phoneNumber" id="phoneNumber" class="required" />
+                        <input type="text" name="phoneNumber" id="phoneNumber" class="required" placeholder="555-555-5555" />
 
 
                         <label for="email">Email Address*</label>
-                        <input type="email" name="email" id="email" class="required-email" />
+                        <input type="email" name="email" id="email" class="required-email" placeholder="email@email.com" />
 
                 </div><!--Contact closed-->
                 
@@ -178,7 +183,7 @@
         
                 <!-- Comments -->
                 <div data-role="fieldcontain">
-                <h2>Comments:</h2>
+                <h3>Comments:</h3>
                 <label for="textBox"></label>
                 <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
                 </div><!--Textbox closed-->
@@ -189,7 +194,7 @@
             <div data-role="fieldcontain">
             <input type="submit" id="saveEvent" value="Save"/>
             
-            <input type="reset" id="resetButton" value="Reset"/>
+            <input type="reset" id="resetButton" value="Reset" data-theme="c"/ >
             </div><!--Button closed-->
             
         </form><!--Form Close-->
@@ -836,7 +841,8 @@
 	<script type="text/javascript" src="js/libs/jstorage.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
-	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>	
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+	<script type="text/javascript" src="js/libs/jqm-datebox.mode.slidebox.js"></script>	
 	<script src="./js/RssFeed.js"></script>
 	<script src="./js/RssFeeder.js"></script>
 	<script type="text/javascript" src="js/JSON.js"></script>

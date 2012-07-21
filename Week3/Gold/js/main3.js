@@ -259,16 +259,17 @@ function storeData(key) {
     }
     
     
+    
 
 
-var displayLink = gE("displayStoredData");
-    displayLink.addEventListener("click", getData);
-    var clearLink = gE("clearStoredData");
-    clearLink.addEventListener("click", clearLocal);
-    var saveLink = gE("saveEvent");
-    saveLink.addEventListener(storeData);
-    var editSubmit = gE("saveEvent");
-    editSubmit.addEventListener("click",getData);
+//var displayLink = gE("displayStoredData");
+//    displayLink.addEventListener("click", getData);
+//    var clearLink = gE("clearStoredData");
+//    clearLink.addEventListener("click", clearLocal);
+//    var saveLink = gE("saveEvent");
+//    saveLink.addEventListener(storeData);
+//    var editSubmit = gE("saveEvent");
+//    editSubmit.addEventListener("click",getData);
 
 });
 
