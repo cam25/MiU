@@ -1,10 +1,4 @@
-var parseEventForm = function(data) { 
-        //uses data
-        
-        
 
-  
-     };
      
 $(document).bind('pageinit', function(){
     
@@ -16,7 +10,7 @@ $(document).bind('pageinit', function(){
 submitHandler: function(){
 var data = evform.serializeArray();
 parseEventForm(data);
-console.log(data);
+console.log(localStorage);
 
 
 }
@@ -60,13 +54,13 @@ function storeData(key) {
             //Set the id to the existing key we're editting so that it will save the data.
             //The key is the same key that's been passed along from the editSubmit eventhanbdler.
             //to the validate function, then passed here, into the storeData 
-            id = key;
+             id = key;
 
         }
         //Gather up all our form field values and store in an object.
         //Object properties contain array with the form label and input values
         var item = {};
-        item.group = ["Event:", gE("groups").value];
+        item.group = ["Event:", gE("select-choice-1").value];
         item.firstName = ["FirstName:", gE("firstName").value];
         item.lastName = ["LastName:", gE("lastName").value];
         item.address = ["address:", gE("address").value];
@@ -74,11 +68,11 @@ function storeData(key) {
         item.state = ["State:", gE("state").value];
         item.phoneNumber = ["PhoneNumber:", gE("phoneNumber").value];
         item.email = ["Email:", gE("email").value];
-        item.timeEVent = ["TimeOfEvent:", gE("timeOfEvent").value];
-        item.date = ["DateOfEvent:", gE("dateOfEvent").value];
+        //item.timeEVent = ["TimeOfEvent:", gE("timeOfEvent").value];
+        item.date = ["mydate:", gE("mydate").value];
         item.textBox = ["TextBox:", gE("textBox").value];
         item.iq = ["Range:", gE("range").value];
-        item.checkBox = ["CheckBox:", gE("checkbox").value];
+        //item.checkBox = ["CheckBox:", gE("checkbox").value];
 
 
         //save data to local storage: Use Stringify to convert our object to a string.
@@ -109,7 +103,7 @@ function storeData(key) {
         toggleControls("off");
 
         //populate the form files with the current localStorage values
-        gE("groups").value = item.group[1];
+        gE("select-choice-1").value = item.group[1];
         gE("firstName").value = item.firstName[1];
         gE("lastName").value = item.lastName[1];
         gE("address").value = item.address[1];
@@ -117,36 +111,36 @@ function storeData(key) {
         gE("state").value = item.state[1];
         gE("phoneNumber").value = item.phoneNumber[1];
         gE("email").value = item.email[1];
-        gE("timeOfEvent").value = item.timeEVent[1];
-        gE("dateOfEvent").value = item.date[1];
+        //gE("timeOfEvent").value = item.timeEVent[1];
+        gE("mydate").value = item.date[1];
         gE("textBox").value = item.textBox[1];
         gE("range").value = item.iq[1];
 
-        if (gE("Monday").value == item.checkBox[1]) {
-            gE("Monday").setAttribute("checked", "checked");
-        }
-
-
-        if (gE("Tuesday").value == item.checkBox[1]) {
-            gE("Tuesday").setAttribute("checked", "checked");
-        }
-        if (gE("Wednesday").value == item.checkBox[1]) {
-            gE("Wednesday").setAttribute("checked", "checked");
-        }
-        if (gE("Thursday").value == item.checkBox[1]) {
-            gE("Thursday").setAttribute("checked", "checked");
-        }
-        if (gE("Friday").value == item.checkBox[1]) {
-            gE("Friday").setAttribute("checked", "checked");
-        }
-
-        if (gE("Saturday").value == item.checkBox[1]) {
-            gE("Saturday").setAttribute("checked", "checked");
-        }
-
-        if (gE("Sunday").value == item.checkBox[1]) {
-            gE("Sunday").setAttribute("checked", "checked");
-        }
+//        if (gE("Monday").value == item.checkBox[1]) {
+//            gE("Monday").setAttribute("checked", "checked");
+//        }
+//
+//
+//        if (gE("Tuesday").value == item.checkBox[1]) {
+//            gE("Tuesday").setAttribute("checked", "checked");
+//        }
+//        if (gE("Wednesday").value == item.checkBox[1]) {
+//            gE("Wednesday").setAttribute("checked", "checked");
+//        }
+//        if (gE("Thursday").value == item.checkBox[1]) {
+//            gE("Thursday").setAttribute("checked", "checked");
+//        }
+//        if (gE("Friday").value == item.checkBox[1]) {
+//            gE("Friday").setAttribute("checked", "checked");
+//        }
+//
+//        if (gE("Saturday").value == item.checkBox[1]) {
+//            gE("Saturday").setAttribute("checked", "checked");
+//        }
+//
+//        if (gE("Sunday").value == item.checkBox[1]) {
+//            gE("Sunday").setAttribute("checked", "checked");
+//        }
 
         //remove the initial listener from the input "save contact"       
         saveLink.removeEventListener("click", storeData);
@@ -257,15 +251,22 @@ function storeData(key) {
             return false;
         }
     }
+    var parseEventForm = function(data) { 
+        //uses data
+        localStorage.getItem('formdata');
+        storeData();
+	console.log(localStorage);        
+        
+     };
     
     
     
 
 
-//var displayLink = gE("displayStoredData");
-//    displayLink.addEventListener("click", getData);
-//    var clearLink = gE("clearStoredData");
-//    clearLink.addEventListener("click", clearLocal);
+var displayLink = gE("displayStoredData");
+    displayLink.addEventListener("click", getData);
+    var clearLink = gE("clearStoredData");
+    clearLink.addEventListener("click", clearLocal);
 //    var saveLink = gE("saveEvent");
 //    saveLink.addEventListener(storeData);
 //    var editSubmit = gE("saveEvent");

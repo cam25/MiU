@@ -15,10 +15,11 @@
 	<meta http-equiv="cleartype" content="on"/>
 	
 	<!-- StyleSheets under here -->
-	<link href="css/style.css" rel="stylesheet" type="text/css" />
+	
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+	<link href="./css/style.css" rel="stylesheet" type="text/css" />
 	
 	
 
@@ -83,8 +84,9 @@
                 	<div data-role="fieldcontain">
    <h3>Select An Event:</h3>             	
    <label for="select-choice-1" class="select"></label>
-   <select name="select-choice-1" id="groups" data-native-menu="false"  class="required">
-      <option data-placeholder="true">Please Select A Category</option>
+   <select name="select-choice-1" id="select-choice-1" data-native-menu="false" class="required">
+      <option data-placeholder="true" value>Please Select A Category</option>
+      <optgroup label="Categories">
       <option value="Birthday">Birthday</option>
       <option value="Wedding">Wedding</option>
       <option value="Meeting">Meeting</option>
@@ -96,8 +98,11 @@
       <option value="RoadTrip">Road Trip</option>
       <option value="SportingEvent">Sporting Event</option>
       <option value="BookSigning">Book Signing</option>
+      </optgroup>
    </select>
+                	
                 	</div><!--Dropdown Closed-->
+            
 
                 
                 <!-- Days To Schedule -->
@@ -129,7 +134,6 @@
                 </fieldset>
                 </div>--><!--Dayschedule Closed-->
               
-                
                 <!-- Priority Meter -->
                 <div data-role="fieldcontain">
                 <h3>Priority Meter:</h3>
@@ -171,7 +175,7 @@
 
 
                         <label for="phoneNumber">Phone Number*</label>
-                        <input type="text" name="phoneNumber" id="phoneNumber" class="required" placeholder="555-555-5555" />
+                        <input type="text" name="phoneNumber" id="phoneNumber" class="required phoneUS" placeholder="555-555-5555" />
 
 
                         <label for="email">Email Address*</label>
@@ -192,9 +196,9 @@
             
             <!-- Buttons -->
             <div data-role="fieldcontain">
-            <input type="submit" id="saveEvent" value="Save"/>
+            <input type="submit" id="saveEvent" value="Save Event"/>
             
-            <input type="reset" id="resetButton" value="Reset" data-theme="c"/ >
+            <input type="reset" id="resetButton" value="Reset Form" data-theme="c"/>
             </div><!--Button closed-->
             
         </form><!--Form Close-->
@@ -269,7 +273,7 @@
     </a>
   </div><!--SportingEvent Thumbnail Close-->
   
-    <H4>Kids Categories</H4>
+    <h4>Kids Categories</h4>
 
     <div class="ui-block-a">
 
@@ -281,7 +285,7 @@
 </div><!--Kids Thumbnail Close-->
 </div><!--Kids Thumbnail Close-->
 <div class="ui-grid-b">
-  <H4>Formal Events</H4>
+  <h4>Formal Events</h4>
 
     
     
@@ -837,11 +841,11 @@
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
 	<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
-	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
-	<script type="text/javascript" src="js/libs/jstorage.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
 	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/libs/jstorage.js"></script>
 	<script type="text/javascript" src="js/libs/jqm-datebox.mode.slidebox.js"></script>	
 	<script src="./js/RssFeed.js"></script>
 	<script src="./js/RssFeeder.js"></script>
