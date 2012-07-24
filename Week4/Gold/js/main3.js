@@ -198,7 +198,7 @@ function storeData(key) {
         var imageLi = document.createElement("li");
         makeOtherList.appendChild(imageLi);
         var newImage = document.createElement("img");
-        var setSource = newImage.setAttribute("src", "images/" + catName + ".png");
+        var setSource = newImage.setAttribute("src", "Images/" + catName + ".png");
         imageLi.appendChild(newImage);
 
     }
