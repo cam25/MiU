@@ -15,7 +15,7 @@
 	<meta http-equiv="cleartype" content="on"/>
 	
 	<!-- StyleSheets under here -->
-	
+	<link rel="Stylesheet" href="/css/redmond/jquery-ui-1.8.custom.css" />
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
 	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
@@ -30,11 +30,11 @@
 </head>
 <body>
 <!-- Home -->
-	<div data-role="page" id="Home" data-theme="b" style="background-image:url(images/eggs.jpeg)">
-		<div data-role="header" data-theme="e">
+	<div data-role="page" id="Home" data-theme="b">
+		<div data-role="header" >
 			<h1>Eventures Event</h1>
 		</div>
-		<div data-role="content" >
+		<div data-role="content" style="background-image:url(images/waves.jpeg)" >
 			<img src="../Gold/images/CTA4.png"/>
 			
 			<a href="#addItem2" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
@@ -48,7 +48,7 @@
 				<a href="#parties" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Party Events</a>
 			</div>
 		</div>
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#about" data-ajax="false" >About</a></li>
@@ -61,11 +61,11 @@
 	
 	<div data-role="page" id="addItem2" data-add-back-btn="true" data-theme="b">
 	
-	<div data-role="header" data-theme="e" ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline"/>
+	<div data-role="header" data-theme="a"  ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
 			<h1>Add Events</h1>
 	</div><!--header close-->
 	
-	<div data-role="content">
+	<div data-role="content" style="background-image:url(images/waves.jpeg)">
 				
 				<div data-role="fieldcontain">
 				<p>Required Fields Have *</p>
@@ -205,7 +205,7 @@
         
         
 			
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="index.html" data-ajax="false" >Back</a></li>
@@ -217,9 +217,9 @@
 	</div><!--Content Close-->
 	
 	<!--NEWS FEED-->
-	 <div data-role="page" id="rss" data-add-back-btn="true" data-theme="e">
+	 <div data-role="page" id="rss" data-add-back-btn="true" data-theme="e" style="background-image:url(images/waves.jpeg)">
 
-			<div data-role="header" data-theme="e">
+			<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
 				<h1>Event News</h1>
 			</div><!--Header Close-->
 
@@ -228,7 +228,7 @@
 				<div id="rssFeed"></div>
 			</div><!--Content Close-->
 
-			<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
 					<li><a href="#Home" data-ajax="false" >Home</a></li>
@@ -239,12 +239,41 @@
 	 </div><!--Feed Page Close-->
 	 
 <!-- ThumbnailGrid -->
-	<div data-role="page" id="thumbnailGrid" data-theme="b">
-		<div data-role="header" data-theme="e"><a href="#Home">Back</a>
-			<h1>Pick An Event</h1>
+	<div data-role="page" id="thumbnailGrid" data-theme="b" style="background-image:url(images/waves.jpeg)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
 		</div><!--Header close-->
 		
 		<div class="ui-grid-b">
+<h4>Parties</h4>
+
+<div class="ui-block-a">
+
+    <a href="#dinnerParty">
+    <img  src="images/DinnerPartyThumb.png" />
+    <p>Dinner Parties</p>
+    </a>
+    </div><!--DinnerParty Close-->
+    
+        <div class="ui-block-b">
+
+    <a href="#babyShower">
+    <img  src="images/BabyShowers.png" />
+    <p>Baby Shower</p>
+    </a>
+    </div><!--BabyShower Close-->
+
+    <div class="ui-block-c">
+
+    <a href="#birthday">
+    <img  src="images/BirthdayThumb.png" />
+    <p>Birthday</p>
+    </a>
+    </div><!--Birthday Close-->
+</div><!--Class Close-->
+		
+		<div class="ui-grid-b">
+		<h4>Entertainment</h4>
 
   <div class="ui-block-a">
 
@@ -316,38 +345,11 @@
 </div><!--Wedding Close-->
 </div><!--Grid Close-->
 
-<div class="ui-grid-b">
-<h4>Parties</h4>
 
-<div class="ui-block-a">
-
-    <a href="#dinnerParty">
-    <img  src="images/DinnerPartyThumb.png" />
-    <p>Dinner Parties</p>
-    </a>
-    </div><!--DinnerParty Close-->
-    
-        <div class="ui-block-b">
-
-    <a href="#babyShower">
-    <img  src="images/BabyShowers.png" />
-    <p>Baby Shower</p>
-    </a>
-    </div><!--BabyShower Close-->
-
-    <div class="ui-block-c">
-
-    <a href="#birthday">
-    <img  src="images/BirthdayThumb.png" />
-    <p>Birthday</p>
-    </a>
-    </div><!--Birthday Close-->
-</div><!--Class Close-->
-
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#About" data-ajax="false" >About</a></li>
+				<li><a href="#Home" data-ajax="false" >Home</a></li>
 				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 			</ul>
 		</div><!--Nav Close-->
@@ -355,8 +357,8 @@
 	</div><!--Page close-->
 
 <!-- Entertainment -->
-	<div data-role="page" id="entertainment" data-theme="b">
-		<div data-role="header" data-theme="e"><a href="#Home" >Back</a>
+	<div data-role="page" id="entertainment" data-theme="b" style="background-image:url(images/waves.jpeg)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
 			<h1>Click Event</h1>
 		</div><!--header close-->
 		<div data-role="content">
@@ -381,10 +383,10 @@
   				</div><!--sporting event close-->
 			</div><!--Grid close-->
 		</div><!--content close-->
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#About" data-ajax="false" >About</a></li>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
 					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 				</ul>
 			</div><!--nav close-->
@@ -392,9 +394,9 @@
 	</div><!--page close-->
 	
 <!-- Concert -->
-	<div data-role="page" id="concert" data-theme="e">
-		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#entertainment">Back</a>
-			<h1>Upcoming Event</h1>
+	<div data-role="page" id="concert" data-theme="e" style="background-image:url(images/waves.jpeg)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true" ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
 		</div><!--header close-->
 		<div data-role="content">				
 			<p>Event:Concert</p>
@@ -411,10 +413,10 @@
 			<p>Day:Friday</p>
 			<p>TextBox: 50 Cent Show!</p>
 		</div><!--content close-->
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="#entertainment" data-ajax="false" >Back</a></li>
 					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 				</ul>
 			</div><!--nav close-->
@@ -422,8 +424,8 @@
 	</div><!--page close-->
 	
 <!-- Movies -->
-	<div data-role="page" id="movies" data-theme="e">
-		<div data-role="header" data-theme="a" ><a href="#entertainment">Back</a>
+	<div data-role="page" id="movies" data-theme="e" style="background-image:url(images/waves.jpeg)">
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
 			<h1>Upcoming Event</h1>
 		</div><!--header close-->
 		<div data-role="content">
@@ -441,10 +443,10 @@
 			<p>Day:Friday</p>
 			<p>TextBox: New Movie</p>
 		</div><!--content close-->
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 		<div data-role="navbar">
 			<ul>
-				<li><a href="#Home" data-ajax="false" >Home</a></li>
+				<li><a href="#entertainment" data-ajax="false" >Back</a></li>
 				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 			</ul>
 		</div><!--nav close-->
@@ -452,8 +454,8 @@
 	</div><!--page close-->
 	
 <!-- SportingEvent -->
-	<div data-role="page" id="sportingEvent" data-theme="e">
-		<div data-role="header" data-theme="a" ><a href="#entertainment">Back</a>
+	<div data-role="page" id="sportingEvent" data-theme="e" style="background-image:url(images/waves.jpeg)">
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo, Facebook" style="float:left;display:inline" />
 			<h1>Upcoming Event</h1>
 		</div><!--header close-->
 
@@ -473,10 +475,10 @@
 			<p>TextBox: Orioles Game!</p>
 		</div><!--content close-->
 
-		<div data-role="footer" data-position="fixed" data-theme="e">
+		<div data-role="footer" data-position="fixed" data-theme="a">
 			<div data-role="navbar">
 				<ul>
-					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="#entertainment" data-ajax="false" >Back</a></li>
 					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
 				</ul>
 			</div><!--nav close-->
