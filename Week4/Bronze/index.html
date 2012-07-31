@@ -12,9 +12,13 @@
         <!-- Mobile IE needs ClearType for smoothing fonts -->
         <meta http-equiv="cleartype" content="on" />
         <!-- StyleSheets under here -->
-        <link href="./css/style.css" rel="stylesheet" type="text/css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css"
-        />
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" /> 
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script> 
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+   <link rel="stylesheet" href="css/themes/SecondOne.css" />
+  <link href="./css/style.css" rel="stylesheet" type="text/css" />
+        
         <!-- JavaScript is normally at the end of the body, except for Modernizr
         which enables HTML5 elements & feature detects -->
         <script src="../Bronze/js/libs/modernizr.custom.min.js"></script>
@@ -22,16 +26,16 @@
 <!--Home Page-->
     
 <body>
-	<div data-role="page" id="Home" data-theme="e">
+	<div data-role="page" id="Home" data-theme="a">
 		<div data-role="header" data-theme="a">
 			<h1>Plan Events</h1>
 		</div>
 		
-		<div data-role="content"  style="background-image:url(images/background4.png)">
+		<div data-role="content"  >
 			<img src="../Bronze/images/CTA4.png" />
-			<p><a href="additem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a></p>
+			<p><a href="additem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="a">Click To Add Your Event</a></p>
 			<h4>Browse By Event Category:</h4>
-			<div data-role="collapsible-set" data-theme="b">
+			<div data-role="collapsible-set" data-theme="a">
 				<div data-role="listview" data-inset="true" data-filter="true">
 					<div data-role="collapsible" data-collapsed="true">
 						<h3><img src="../Bronze/images/Entertainment.png" />Entertainment</h3>
