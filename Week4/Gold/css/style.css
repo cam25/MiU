@@ -1,0 +1,23 @@
+label.error{
+display:block;
+margin:10px 0;
+color:red;
+};
+
+input.required ui-input-text ui-body-b ui-corner-all ui-shadow-inset error{
+	color: red;
+	
+}
+<style>
+.ui-grid-a img {
+    width  : 100%%;
+    height : auto;
+}
+</style>
+
+h2{
+	color: white;
+}
+
+
+

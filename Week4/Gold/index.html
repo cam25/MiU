@@ -1,0 +1,869 @@
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8"/>
+	
+	<title>Eventures Events Planning</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True"/>
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on"/>
+	
+	<!-- StyleSheets under here -->
+	
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.min.css" /> 
+	<link href="./css/style.css" rel="stylesheet" type="text/css" />
+	
+	
+
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+<!-- Home -->
+	<div data-role="page" id="Home" data-theme="b">
+		<div data-role="header"  >
+			<h1>Eventures Event</h1>
+		</div>
+		<div data-role="content" style="background-image:url(images/waves2.png)">
+			<img src="../Gold/images/CTA4.png"/>
+			
+			<a href="#addItem2" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Click To Add Your Event</a>
+			<a href="#thumbnailGrid" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">View By Event Thumbnail</a>
+			<a href="#rss" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Weather Report</a>
+			<h2> Browse By Event Category:</h2>	
+			<div data-role="listview" data-inset="true" data-filter="true" data-filter-placeholder="Filter Events...">
+				<a href="#entertainment" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Entertainment</a>
+				<a href="#kidsEvent2" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Kids Event</a>
+				<a href="#formalEvent" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Formal Events</a>
+				<a href="#parties" data-transition="flow" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="b">Party Events</a>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#about" data-ajax="false" >About</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--Additem2.html-->
+	
+	<div data-role="page" id="addItem2" data-add-back-btn="true" data-theme="b">
+	
+	<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+			<h1>Add Events</h1>
+	</div><!--header close-->
+	
+	<div data-role="content" style="background-image:url(images/waves2.png)">
+				
+				<div data-role="fieldcontain">
+				<p>Required Fields Have *</p>
+        <nav>
+        <div class="ui-grid-a">
+	<div class="ui-block-a"><a href="#" data-transition="slidefade" data-role="button" data-mini="true"  data-ajax="false" id="clearStoredData" data-theme="b">Clear Event </a></div>
+	<div class="ui-block-b"><a href="#displayPage" data-transition="slidefade" data-role="button" data-mini="true"  data-ajax="false" id="displayStoredData" data-theme="b">Display Events</a></div>	   
+</div>
+        </nav>
+		</div><!--Nav Closed-->
+		
+		
+        <form action="" method="post" id="eventForm">
+            <div data-role="fieldcontain" id="eventFieldset">
+                <!-- Drop Down Menu -->
+                	<div data-role="fieldcontain">
+   <h3>Select An Event:</h3>             	
+   <label for="select-choice-1" class="select"></label>
+   <select name="select-choice-1" id="select-choice-1" data-native-menu="false" class="required" >
+      <option data-placeholder="true" value>Birthday</option>
+      <optgroup label="Categories">
+      <option value="Birthday">Birthday</option>
+      <option value="Wedding">Wedding</option>
+      <option value="Meeting">Meeting</option>
+      <option value="BabyShower">Baby Shower</option>
+      <option value="Concert">Concert</option>
+      <option value="Movies">Movies</option>
+      <option value="KidsEvent">Kids Event</option>
+      <option value="DinnerPary">Dinner Party</option>
+      <option value="RoadTrip">Road Trip</option>
+      <option value="SportingEvent">Sporting Event</option>
+      <option value="BookSigning">Book Signing</option>
+      </optgroup>
+   </select>
+                	
+                	</div><!--Dropdown Closed-->
+            
+
+                
+                <!-- Days To Schedule -->
+                <!--<div data-role="fieldcontain" data-theme="b">
+                <fieldset data-role="controlgroup" data-mini="true">
+                <h4>Choose a day:</h4>
+                
+                        <label for="Monday">Monday</label>
+                        <input type="checkbox" name="day" value="Monday" id="Monday" />
+
+                        <label for="Tuesday">Tuesday</label>
+                        <input type="checkbox" name="day" value="Tuesday" id="Tuesday" />
+
+                        <label for="Wednesday">Wednesday</label>
+                        <input type="checkbox" name="day" value="Wednesday" id="Wednesday" />
+
+                        <label for="Thursday">Thursday</label>
+                        <input type="checkbox" name="day" value="Thursday" id="Thursday" />
+
+                        <label for="Friday">Friday</label>
+                        <input type="checkbox" name="day" value="Friday" id="Friday" />
+
+
+                        <label for="Saturday">Saturday</label>
+                        <input type="checkbox" name="day" value="Saturday" id="Saturday" />
+
+                        <label for="Sunday">Sunday</label>
+                        <input type="checkbox" name="day" value="Sunday" id="Sunday" />
+                </fieldset>
+                </div>--><!--Dayschedule Closed-->
+              
+                <!-- Priority Meter -->
+                <div data-role="fieldcontain">
+                <h3>Priority Meter:</h3>
+                <input type="range" name="points" min="1" max="10" value="range" data-highlight="true" id="range" placeholder="0" />
+                </div><!--Priority Closed-->
+                
+                <!-- Contact Info -->
+                <div data-role="fieldcontain">
+                <h3>Event Time/Day:</h3>
+
+                        <!--<label for="timeOfEvent">Time Of Event*</label>
+                        <input type="text" name="timeOfEvent" size="30" id="timeOfEvent" placeholder="Ex. 12:00PM" class="required" />-->
+                        
+                        <label for="mydate">Add Date/Time</label>
+
+                        <input name="mydate" id="mydate" type="date" data-role="datebox"
+   data-options='{"mode": "slidebox", "overrideDateFormat":"%Y-%m-%d %I:%M%p", "overrideTimeFormat":12, "overrideSlideFieldOrder":["y","m","d","h","i"]}' placeholder="Click Icon To Set Date/Time" class="required time/date" />  
+                </div><!--Time/Day Close-->
+                                  
+                <div data-role="fieldcontain" data-mini="true">
+                <h3>Contact Person:</h3>
+               
+                        <label for="firstName">*First Name</label>
+                        <input type="text" name="First name" id="firstName" placeholder="John"  class="required" />
+
+                        <label for="lastName">*Last Name</label>
+                        <input type="text" name="Last name" id="lastName" placeholder="Smith" class="required" />
+
+                        <label for="address">Address</label>
+                        <input type="text" name="address" id="address" placeholder="Contact's Street"  />
+
+
+                        <label for="city">City</label>
+                        <input type="text" name="city" id="city" placeholder="Contact's City"  />
+
+
+                        <label for="state">State</label>
+                        <input type="text" name="state" id="state" placeholder="Contact's State"  />
+
+
+                        <label for="phoneNumber">Phone Number*</label>
+                        <input type="text" name="phoneNumber" id="phoneNumber" placeholder="555-555-5555" class="required phoneUS" />
+
+
+                        <label for="email">Email Address*</label>
+                        <input type="email" name="email" id="email" class="required-email" placeholder="email@email.com" />
+
+                </div><!--Contact closed-->
+                
+                
+        
+                <!-- Comments -->
+                <div data-role="fieldcontain">
+                <h3>Comments:</h3>
+                <label for="textBox"></label>
+                <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
+                </div><!--Textbox closed-->
+                
+            </div><!--Page Closed-->
+            
+            <!-- Buttons -->
+            <div data-role="fieldcontain">
+            <input type="submit" id="saveEvent" value="Save Event"/>
+            
+            <input type="reset" id="resetButton" value="Reset Form" data-theme="c"/>
+            </div><!--Button closed-->
+            
+        </form><!--Form Close-->
+        
+        
+			
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="index.html" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--Nav Close-->
+		</div><!--Footer Close-->
+			</div>
+	</div><!--Content Close-->
+	
+	<!--NEWS FEED-->
+	 <div data-role="page" id="rss" data-add-back-btn="true" data-theme="e" style="background-image:url(images/waves2.png)">
+
+			<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+				<h1>Event News</h1>
+			</div><!--Header Close-->
+
+			<div data-role="content">
+
+				<div id="rssFeed"></div>
+			</div><!--Content Close-->
+
+			<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--Nav closed-->
+			</div><!--footer closed-->
+	 </div><!--Feed Page Close-->
+	 
+<!-- ThumbnailGrid -->
+	<div data-role="page" id="thumbnailGrid" data-theme="b" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
+		</div><!--Header close-->
+		
+		<div class="ui-grid-b">
+<h4>Parties</h4>
+
+<div class="ui-block-a">
+
+    <a href="#dinnerParty">
+    <img  src="images/DinnerPartyThumb.png" />
+    <p>Dinner Parties</p>
+    </a>
+    </div><!--DinnerParty Close-->
+    
+        <div class="ui-block-b">
+
+    <a href="#babyShower">
+    <img  src="images/BabyShowers.png" />
+    <p>Baby Shower</p>
+    </a>
+    </div><!--BabyShower Close-->
+
+    <div class="ui-block-c">
+
+    <a href="#birthday">
+    <img  src="images/BirthdayThumb.png" />
+    <p>Birthday</p>
+    </a>
+    </div><!--Birthday Close-->
+</div><!--Class Close-->
+		
+		<div class="ui-grid-b">
+		<h4>Entertainment</h4>
+
+  <div class="ui-block-a">
+
+    <a href="#concert">
+    <img src="images/ConcertThumb.png" />
+    <p>Concert</p>
+    </a>
+    
+
+  </div><!--concert thumbnail close-->
+
+  <div class="ui-block-b">
+
+    <a href="#movies">
+    <img src="images/MoviesThumb.png" />
+    <p>Movies</p>
+    </a>
+
+  </div><!--Movies Thumbnail Close-->
+
+  <div class="ui-block-c">
+
+    <a href="#sportingEvent">
+    <img  src="images/SportingEventsThumb.png" />
+    <p>Sporting Event</p>
+    </a>
+  </div><!--SportingEvent Thumbnail Close-->
+  
+    <h4>Kids Categories</h4>
+
+    <div class="ui-block-a">
+
+    <a href="#kidsEvent">
+    <img  src="images/Kids.png" />
+    <p>Kids Events</p>
+    </a>
+
+</div><!--Kids Thumbnail Close-->
+</div><!--Kids Thumbnail Close-->
+<div class="ui-grid-b">
+  <h4>Formal Events</h4>
+
+    
+    
+    <div class="ui-block-b">
+
+    <a href="#meeting">
+    <img  src="images/MeetingThumb.png" />
+    <p>Meeting</p>
+    </a>
+ 
+</div><!--Meeting Close-->
+
+<div class="ui-block-b">
+
+    <a href="#bookSigning">
+    <img  src="images/BookSign.png" />
+    <p>Book Signings</p>
+    </a>
+ 
+</div><!--BookSigning Close-->
+<div class="ui-block-b">
+
+    <a href="#wedding">
+    <img  src="images/WeddingThumbnail.png" />
+    <p>Wedding</p>
+    </a>
+ 
+</div><!--Wedding Close-->
+</div><!--Grid Close-->
+
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#Home" data-ajax="false" >Home</a></li>
+				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+			</ul>
+		</div><!--Nav Close-->
+		</div><!--Footer close-->
+	</div><!--Page close-->
+
+<!-- Entertainment -->
+	<div data-role="page" id="entertainment" data-theme="b" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
+		</div><!--header close-->
+		<div data-role="content">
+			<div class="ui-grid-b">
+  				<div class="ui-block-a">
+					<a href="#concert">
+    						<img src="images/ConcertThumb.png" />
+    						<p>Concert</p>
+    					</a>
+ 				</div><!--concert close-->
+				<div class="ui-block-b">
+					<a href="#movies">
+    						<img src="images/MoviesThumb.png" />
+    						<p>Movies</p>
+    					</a>
+				</div><!--movies close-->
+				<div class="ui-block-c">
+					<a href="#sportingEvent">
+    						<img  src="images/SportingEventsThumb.png" />
+    						<p>Sporting Event</p>
+    					</a>
+  				</div><!--sporting event close-->
+			</div><!--Grid close-->
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- Concert -->
+	<div data-role="page" id="concert" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true" ><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming </h1>
+		</div><!--header close-->
+		<div data-role="content">				
+			<p>Event:Concert</p>
+			<p>FirstName:Nate</p> 
+			<p>LastName:Reynolds</p>
+			<p>Address:677 Roges Avenue</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-331-1234</p>
+			<p>email:Bait@email.com</p>
+			<p>TimeOfEvent:10:00PM</p>
+			<p>Date:01/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: 50 Cent Show!</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#entertainment" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- Movies -->
+	<div data-role="page" id="movies" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">
+			<p>Event:Movie</p>
+			<p>FirstName:Willis</p> 
+			<p>LastName:Poreter</p>
+			<p>Address:1 Gabe St</p>
+			<p>City:Easton</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-461-3222</p>
+			<p>email:world2@email.com</p>
+			<p>TimeOfEvent:11:00PM</p>
+			<p>Date:08/14/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: New Movie</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#entertainment" data-ajax="false" >Back</a></li>
+				<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+			</ul>
+		</div><!--nav close-->
+	</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- SportingEvent -->
+	<div data-role="page" id="sportingEvent" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming Event</h1>
+		</div><!--header close-->
+
+		<div data-role="content">
+			<p>Event:SportingEvent</p>
+			<p>FirstName:Paul</p> 
+			<p>LastName:Norman</p>
+			<p>Address:333 Corin Rd</p>
+			<p>City:Seabrook</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:301-239-1234</p>
+			<p>email:Goode@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:07/12/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Orioles Game!</p>
+		</div><!--content close-->
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#entertainment" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+
+<!-- KidsEvent2 -->
+	<div data-role="page" id="kidsEvent2" data-theme="b" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
+		</div><!--header close-->
+		
+		<div data-role="content">
+			<div class="ui-grid-b">
+				<h4>Kids Categories</h4>
+				<div class="ui-block-a">
+					<a href="#kidsEvent">
+    						<img  src="images/Kids.png" />
+    						<p>Kids Events</p>
+    					</a>
+				</div><!--kids close-->
+			</div><!--grid close-->
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- KidsEvent -->
+	<div data-role="page" id="kidsEvent" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming Event</h1>
+		</div><!--header close-->
+		<div data-role="content">			
+			<p>Event:KidsEvent</p>
+			<p>FirstName:Kerry</p> 
+			<p>LastName:Diggs</p>
+			<p>Address:3212 Harp St</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-443-4443</p>
+			<p>email:Balto@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:02/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Saturday</p>
+			<p>TextBox: Six Flags!</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#kidsEvent2" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- FormalEvent -->
+	<div data-role="page" id="formalEvent" data-theme="b" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
+		</div><!--header close-->
+		<div data-role="content">
+			<div class="ui-grid-b">
+  				<h4>Formal Events:</h4>
+				<div class="ui-block-b">
+					<a href="#meeting">
+    						<img  src="images/MeetingThumb.png" />
+    						<p>Meeting</p>
+    					</a>
+				</div><!--meeting close-->
+				<div class="ui-block-b">
+					<a href="#bookSigning">
+    						<img  src="images/BookSign.png" />
+    						<p>Book Signings</p>
+    					</a>
+				</div><!--booksigning close-->
+				<div class="ui-block-b">	
+    					<a href="#wedding">
+    						<img  src="images/WeddingThumbnail.png" />
+    						<p>Wedding</p>
+    					</a>
+				</div><!--wedding close-->
+  			</div><!--grid close-->
+  		</div><!--page close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- Meeting -->
+	<div data-role="page" id="meeting" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming </h1>
+		</div><!--header close-->
+		<div data-role="content">
+			<p>Event:Meeting</p>
+			<p>FirstName:West</p> 
+			<p>LastName:Ucly</p>
+			<p>Address:122 West East st</p>
+			<p>City:Glen Burnie</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-332-3333</p>
+			<p>email:Westter@email.com</p>
+			<p>TimeOfEvent:6:30PM</p>
+			<p>Date:10/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox:Job Interview</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#formalEvent" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+
+<!-- Wedding -->
+	<div data-role="page" id="wedding" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">		
+			<p>Event:Wedding</p>
+			<p>FirstName:John</p> 
+			<p>LastName:Smith</p>
+			<p>Address:333 West 3rd St</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-555-5555</p>
+			<p>email:email@email.com</p>
+			<p>TimeOfEvent:10:00PM</p>
+			<p>Date:01/14/2013</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Wedding Day</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#formalEvent" data-ajax="false" >back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+
+<!-- BookSigning -->
+	<div data-role="page" id="bookSigning" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">
+			<p>Event:BookSigning</p>
+			<p>FirstName:West</p> 
+			<p>LastName:Ucly</p>
+			<p>Address:122 West East st</p>
+			<p>City:Glen Burnie</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-332-3333</p>
+			<p>email:Westter@email.com</p>
+			<p>TimeOfEvent:6:30PM</p>
+			<p>Date:10/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox:Job Interview</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#formalEvent" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- Parties -->
+	<div data-role="page" id="parties" data-theme="b" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Pick Event</h1>
+		</div><!--header close-->
+		
+			<div class="ui-grid-b">
+			
+				<h4>Parties</h4>
+				<div class="ui-block-a">
+					<a href="#dinnerParty">
+    						<img  src="images/DinnerPartyThumb.png" />
+    						<p>Dinner Parties</p>
+    					</a>
+    				</div> <!--dinnerpary close-->
+    				
+    				<div class="ui-block-b">
+					<a href="#babyShower">
+    						<img  src="images/BabyShowers.png" />
+    						<p>Baby Shower</p>
+    					</a>
+    				</div><!--babyshower close-->
+			
+				<div class="ui-block-c">
+					<a href="#birthday">
+    						<img  src="images/BirthdayThumb.png" />
+    						<p>Birthday</p>
+    					</a>
+				</div><!--birthday close-->
+			</div><!--grid close-->
+	
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+
+<!-- DinnerParty -->
+	<div data-role="page" id="dinnerParty" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">		
+			<p>Event:DinnerParty</p>
+			<p>FirstName:Clyde</p> 
+			<p>LastName:Jones</p>
+			<p>Address:1330 Park Ave</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:410-123-3433</p>
+			<p>email:Morrison@email.com</p>
+			<p>TimeOfEvent:6:00PM</p>
+			<p>Date:09/10/2012</p>
+			<p>PriorityRange:8/10</p>
+			<p>Day:Friday</p>
+			<p>TextBox: Chilis</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#parties" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+
+<!-- BabyShower -->
+	<div data-role="page" id="babyShower" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">					
+			<p>Event:BabyShower</p>
+			<p>FirstName:Kelly</p> 
+			<p>LastName:Price</p>
+			<p>Address:5455 Frankford</p>
+			<p>City:Baltimore</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-331-1234</p>
+			<p>email:Ester@email.com</p>
+			<p>TimeOfEvent:2:00PM</p>
+			<p>Date:11/14/2012</p>
+			<p>PriorityRange:10/10</p>
+			<p>Day:Sunday</p>
+			<p>TextBox: Kellys First Baby Shower. Arrive 1 hour early to help get setup.</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#parties" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- Birthday -->
+	<div data-role="page" id="birthday" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Upcoming</h1>
+		</div><!--header close-->
+		<div data-role="content">		
+			<p>Event:Birthday</p>
+			<p>FirstName:Gregg</p> 
+			<p>LastName:Reicter</p>
+			<p>Address:22 W 4th St</p>
+			<p>City:Lithicum</p>
+			<p>State:Maryland</p>
+			<p>phoneNumber:443-223-1234</p>
+			<p>email:Jonny@email.com</p>
+			<p>TimeOfEvent:3:00PM</p>
+			<p>Date:08/22/2012</p>
+			<p>PriorityRange:10/10</p>
+			<p>Day:Saturday</p>
+			<p>TextBox: Timmys First Birthday!!!</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#parties" data-ajax="false" >Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+<!-- About -->
+	<div data-role="page" id="about" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>About</h1>
+		</div><!--header close-->
+		<div data-role="content">		
+			<p> This app was designed with the user in mind. This app allows the user to plan a range of events and set the priority of the event from high to low depending on the urgency or importance of the user. This app is currently in beta testing phase but will be official shortly. Any bug please report them to cam25@fullsail.edu. Thanks (Eventures Event Planner App Copyright 2012)</p>
+		</div><!--content close-->
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false" >Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--page close-->
+	
+	<!--Display Page-->
+	<div data-role="page" id="displayPage" data-theme="e" >
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><img border="0" src="images/CTA4LOGO.png" alt="Logo" style="float:left;display:inline" />
+			<h1>Saved Events</h1>
+		</div><!--header close-->
+
+		<div data-role="footer" data-position="fixed" data-theme="a">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#addItem2" data-ajax="false">Back</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--Display close-->
+	<!--Edit Page-->
+	<div data-role="page" id="editPage" data-theme="e" style="background-image:url(images/waves2.png)">
+		<div data-role="header" data-theme="a"  data-add-back-btn="true"><a href="#addItem2" data-ajax="false" >back</a>
+			<h1>Saved Events</h1>
+		</div><!--header close-->
+
+		<div data-role="footer" data-position="fixed" data-theme="e">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#Home" data-ajax="false">Home</a></li>
+					<li><a href="../Bronze/index.html" data-ajax="false">Bronze</a></li>
+				</ul>
+			</div><!--nav close-->
+		</div><!--footer close-->
+	</div><!--Edit close-->
+
+
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script> 
+	<script type="text/javascript" src="http://code.jquery.com/mobile/latest/jquery.mobile.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.core.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.calbox.min.js"></script>
+	<script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/i18n/jquery.mobile.datebox.i18n.en_US.utf8.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.validate.min.js"></script>
+	<script type="text/javascript" src="js/libs/jqm-datebox.mode.slidebox.js"></script>	
+	<script src="./js/RssFeed.js"></script>
+	<script src="./js/RssFeeder.js"></script>
+	<script type="text/javascript" src="js/JSON.js"></script>
+	<script type="text/javascript" src="js/main3.js"></script>
+	
+
+</body>
+</html>
+		

@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="utf-8" />
+        <title>Special Event Planner</title>
+        <!-- Mobile viewport optimized: j.mp/bplateviewport
+        -->
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- Mobile IE needs ClearType for smoothing fonts -->
+        <meta http-equiv="cleartype" content="on" />
+        <!-- StyleSheets under here -->
+        
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" /> 
+        <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script> 
+        <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+        <link rel="stylesheet" href="css/themes/SecondOne.css" />
+        <link href="./css/style.css" rel="stylesheet" type="text/css" />
+        
+        <!-- JavaScript is normally at the end of the body, except for Modernizr
+        which enables HTML5 elements & feature detects -->
+        <script src="../Bronze/js/libs/modernizr.custom.min.js"></script>
+    </head>
+<!--Home Page-->
+    
+<body>
+	<div data-role="page" id="Home" data-theme="a">
+		<div data-role="header" data-theme="a">
+			<h1>Plan Events</h1>
+		</div>
+		
+		<div data-role="content"  >
+			<img src="../Bronze/images/CTA4.png" />
+			<p><a href="additem.html" data-transition="slidefade" data-role="button" data-icon="arrow-r" data-iconpos="right" data-ajax="false" data-theme="a">Click To Add Your Event</a></p>
+			<h4>Browse By Event Category:</h4>
+			<div data-role="collapsible-set" data-theme="a">
+				<div data-role="listview" data-inset="true" data-filter="true">
+					<div data-role="collapsible" data-collapsed="true">
+						<h3><img src="../Bronze/images/Entertainment.png" />Entertainment</h3>
+							<p><a href="#Concert" data-role="button"> Concerts</a></p>
+							<p><a href="#Movies"  data-role="button"> Movies</a></p>
+							<p><a href="#SportingEvent" data-role="button"> Sporting Events</a></p>
+					</div>
+					<div data-role="collapsible" data-collapsed="true">
+                            	<h3><img src="../Bronze/images/Kids.png" />Kids Events</h3>
+               			<a href="#KidsEvent" name="KidsEvent" value="KidsEvent" data-role="button"> Kids Events</a>
+                        	</div>
+                        	<div data-role="collapsible" data-collapsed="true">
+                            	<h3><img src="../Bronze/images/FormalEvent.png" />Formal Events</h3>
+                            	<p><a href="#Meeting" data-role="button">Meeting </a></p>
+                            	<p><a href="#BookSigning" data-role="button">Book Signing </a></p>
+                            	<p><a href="#Wedding" data-role="button">Wedding </a></p>
+                        	</div>
+                        	<div data-role="collapsible" dataf-collapsed="true">
+                            <h3><img src="../Bronze/images/Party.png" />Party</h3>
+                            <p><a href="#DinnerParty" data-role="button">Dinner Party </a></p>
+                            <p><a href="#BabyShower" data-role="button">Baby Shower </a></p>
+                            <p><a href="#Birthday" data-role="button"> Birthday </a></p>
+                        </div>
+                    </div>
+                </div>
+          </div>
+           
+		<div data-role="footer" data-position="fixed">
+               	<div data-role="navbar">
+                        <ul>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="../Gold/index.html">Gold</a></li>
+                        </ul>
+                    </div>
+                </div>
+     </div>
+
+<!--About-->
+<div data-role="page" id="About" data-theme="e">
+	<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		<h1>About</h1>
+	</div>
+		
+	<div data-role="content" style="background-image:url(images/background4.png)">		
+		<p> This app was designed with the user in mind. This app allows the user to plan a range of events and set the priority of the event from high to low depending on the urgency or importance of the user. This app is currently in beta testing phase but will be official shortly. Any bug please report them to cam25@fullsail.edu. Thanks (Special Event Planner App Copyright 2012)</p>
+	</div>
+          <div data-role="footer" data-position="fixed">
+               <div data-role="navbar">
+                    <ul>
+                         <li><a href="#Home">Back</a></li>
+                         <li><a href="../Gold/index.html" data-ajax="false">Gold</a></li>
+                    </ul>
+               </div>
+          </div>
+	</div>
+	
+<!--Concert Page-->
+<div data-role="page" id="Concert" data-theme="e">
+	<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		<h1>Upcoming Event</h1>
+	</div>
+	
+	<div data-role="content" style="background-image:url(images/background4.png)">				
+		<p>Event:Concert</p>
+		<p>FirstName:Nate</p> 
+		<p>LastName:Reynolds</p>
+		<p>Address:677 Roges Avenue</p>
+		<p>City:Baltimore</p>
+		<p>State:Maryland</p>
+		<p>phoneNumber:410-331-1234</p>
+		<p>email:Bait@email.com</p>
+		<p>TimeOfEvent:10:00PM</p>
+		<p>Date:01/14/2013</p>
+		<p>PriorityRange:8/10</p>
+		<p>Day:Friday</p>
+		<p>TextBox: 50 Cent Show!</p>
+	</div>
+	
+     <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+<!--Movies-->
+<div data-role="page" id="Movies" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">
+	
+	<p>Event:Movie</p>
+<p>FirstName:Willis</p> 
+<p>LastName:Poreter</p>
+<p>Address:1 Gabe St</p>
+<p>City:Easton</p>
+<p>State:Maryland</p>
+<p>phoneNumber:410-461-3222</p>
+<p>email:world2@email.com</p>
+<p>TimeOfEvent:11:00PM</p>
+<p>Date:08/14/2012</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox: New Movie</p>
+	
+			</div>
+
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+<!--SportingEvents-->
+<div data-role="page" id="SportingEvent" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">
+
+<p>Event:SportingEvent</p>
+<p>FirstName:Paul</p> 
+<p>LastName:Norman</p>
+<p>Address:333 Corin Rd</p>
+<p>City:Seabrook</p>
+<p>State:Maryland</p>
+<p>phoneNumber:301-239-1234</p>
+<p>email:Goode@email.com</p>
+<p>TimeOfEvent:6:00PM</p>
+<p>Date:07/12/2012</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox: Orioles Game!</p>
+
+			</div>
+			                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+			</div>
+			
+<!--KidsEvent-->
+<div data-role="page" id="KidsEvent" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">
+			
+<p>Event:KidsEvent</p>
+<p>FirstName:Kerry</p> 
+<p>LastName:Diggs</p>
+<p>Address:3212 Harp St</p>
+<p>City:Baltimore</p>
+<p>State:Maryland</p>
+<p>phoneNumber:443-443-4443</p>
+<p>email:Balto@email.com</p>
+<p>TimeOfEvent:6:00PM</p>
+<p>Date:02/14/2013</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Saturday</p>
+<p>TextBox: Six Flags!</p>
+	
+
+			</div>
+			                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+			</div>
+   
+<!--Formal Events-->
+<!--Meeting-->
+<div data-role="page" id="Meeting" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">
+			
+<p>Event:Meeting</p>
+<p>FirstName:West</p> 
+<p>LastName:Ucly</p>
+<p>Address:122 West East st</p>
+<p>City:Glen Burnie</p>
+<p>State:Maryland</p>
+<p>phoneNumber:410-332-3333</p>
+<p>email:Westter@email.com</p>
+<p>TimeOfEvent:6:30PM</p>
+<p>Date:10/10/2012</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox:Job Interview</p>
+
+</div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+ 
+<!--BookSigning-->
+<div data-role="page" id="BookSigning" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">
+			
+<p>Event:BookSigning</p>
+<p>FirstName:West</p> 
+<p>LastName:Ucly</p>
+<p>Address:122 West East st</p>
+<p>City:Glen Burnie</p>
+<p>State:Maryland</p>
+<p>phoneNumber:410-332-3333</p>
+<p>email:Westter@email.com</p>
+<p>TimeOfEvent:6:30PM</p>
+<p>Date:10/10/2012</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox:Job Interview</p>
+
+</div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Home</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+<!--Wedding-->
+<div data-role="page" id="Wedding" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a" ><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">		
+			
+<p>Event:Wedding</p>
+<p>FirstName:John</p> 
+<p>LastName:Smith</p>
+<p>Address:333 West 3rd St</p>
+<p>City:Baltimore</p>
+<p>State:Maryland</p>
+<p>phoneNumber:410-555-5555</p>
+<p>email:email@email.com</p>
+<p>TimeOfEvent:10:00PM</p>
+<p>Date:01/14/2013</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox: Wedding Day</p>
+
+
+</div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+<!--Party Events-->
+<!--DinnerParty-->
+<div data-role="page" id="DinnerParty" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">		
+			
+<p>Event:DinnerParty</p>
+<p>FirstName:Clyde</p> 
+<p>LastName:Jones</p>
+<p>Address:1330 Park Ave</p>
+<p>City:Baltimore</p>
+<p>State:Maryland</p>
+<p>phoneNumber:410-123-3433</p>
+<p>email:Morrison@email.com</p>
+<p>TimeOfEvent:6:00PM</p>
+<p>Date:09/10/2012</p>
+<p>PriorityRange:8/10</p>
+<p>Day:Friday</p>
+<p>TextBox: Chilis</p>
+
+
+</div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+  
+<!--BabyShower-->
+<div data-role="page"  id="BabyShower" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">		
+			
+<p>Event:BabyShower</p>
+<p>FirstName:Kelly</p> 
+<p>LastName:Price</p>
+<p>Address:5455 Frankford</p>
+<p>City:Baltimore</p>
+<p>State:Maryland</p>
+<p>phoneNumber:443-331-1234</p>
+<p>email:Ester@email.com</p>
+<p>TimeOfEvent:2:00PM</p>
+<p>Date:11/14/2012</p>
+<p>PriorityRange:10/10</p>
+<p>Day:Sunday</p>
+<p>TextBox: Kellys First Baby Shower. Arrive 1 hour early to help get setup.</p>
+
+
+</div>
+                <div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+</div>
+
+<!--Birthday-->
+<div data-role="page" id="Birthday" data-theme="e">
+		
+		
+		<div data-role="header" data-theme="a"><img border="0" src="images/CTA4LOGO.png" alt="Logo"style="float:left;display:inline" />
+		
+		
+	
+			<h1>Upcoming Event</h1>
+	</div>
+	
+		
+			<div data-role="content" style="background-image:url(images/background4.png)">		
+			
+<p>Event:Birthday</p>
+<p>FirstName:Gregg</p> 
+<p>LastName:Reicter</p>
+<p>Address:22 W 4th St</p>
+<p>City:Lithicum</p>
+<p>State:Maryland</p>
+<p>phoneNumber:443-223-1234</p>
+<p>email:Jonny@email.com</p>
+<p>TimeOfEvent:3:00PM</p>
+<p>Date:08/22/2012</p>
+<p>PriorityRange:10/10</p>
+<p>Day:Saturday</p>
+<p>TextBox: Timmys First Birthday!!!</p>
+<div data-role="footer" data-position="fixed">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a href="#Home">Back</a>
+                            </li>
+                            <li>
+                                <a href="../Gold/index.html" data-ajax="false">Gold</a>
+                            </li>
+                        </ul>
+                    </div>
+</div>
+
+</div>
+
+	<!-- JavaScript under here -->
+	<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</body>
+</html>
+    
