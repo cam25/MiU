@@ -1,38 +1,63 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<!-- Project Name:Special Event Planner , My Name: Cameron Mozie, Term:
-MiU 1206 -->
-<html lang='en' xmlns='http://www.w3.org/1999/xhtml' dir='ltr'>
-    
-    <head>
-        <title>Special Event Planner</title>
-        <meta charset="UTF-8" />
-        <meta name="description" content="The Best App for Event Planning and Event Organization." />
-        <meta name="keywords" content="Event,Planner,Event Planner,Organizer,Event Planning,Event Orgainizing" />
-        <meta name="robots" content="index, follow" />
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1" />
-        <link href="../Week1/CSS/style.css" rel="stylesheet" type="text/css">
-    </head>
-    
-    <body>
-        <h1>Event Scheduling</h1>
+<!doctype html>  
+<html lang="en">
+<head>
+
+	<meta charset="utf-8">
+	
+	<title>Special Event Planner</title>
+	
+	<!--  Mobile viewport optimized: j.mp/bplateviewport -->
+	<meta name="HandheldFriendly" content="True">
+	<meta name="MobileOptimized" content="320"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<!-- Mobile IE needs ClearType for smoothing fonts -->
+	<meta http-equiv="cleartype" content="on">
+	
+	<!-- StyleSheets under here -->
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	
+	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
+	<script src="../Gold/js/libs/modernizr.custom.min.js"></script>
+
+</head>
+<body>
+	
+	<div data-role="page" data-theme="b" data-add-back-btn="true">
+		
+		<div data-role="header" data-theme="e">
+			<h1>Plan Events</h1>
+	</div>
+	
+		
+			<div data-role="content" >
+
+			
+			<h1>Event Scheduling</h1>
+			
         <nav>
             <a href="#" id="clearStoredData">Clear Data</a>
             <a href="#" id="displayStoredData">Display Data</a>
-            <a href="../Week1/additem.html" id="addNew" style="display:none;">Add New</a>
+            <a href="../Gold/additem.html" id="addNew" style="display:none;">Add New</a>
         </nav>
         <form action="#" method="post" id="eventForm">
-            <fieldset id="eventFieldset">
+            <div data-role="fieldcontain" id="eventFieldset">
                 <!-- Drop Down Menu -->
                 <legend>Event Planning Form</legend>
                 <ul id="errors"></ul>
                 <ul id="questions">
-                	<h2> Choose A Category </h2>
-                	<li id="select"><label for="chooseCat" class="bold" id="chooseCat"></label>
-                	<input type="text" id="search" />
-                	<input type="button" value="Search Event" id="searchButton"/>
-                </ul>
-                
+                	<div data-role="fieldcontain">
+   <label for="select-choice-1" class="select">Choose Category:</label>
+   <select name="select-choice-1" id="select-choice-1">
+      <option value="Choose">--Choose A Category--</option>
+      <option value="rush">Rush: 3 days</option>
+      <option value="express">Express: next day</option>
+      <option value="overnight">Overnight</option>
+   </select>
+</div>
                 <!-- Days To Schedule -->
+                <div data-role="fieldcontain">
                 <h2>Choose a Day:</h2>
                 <ul class="checkBox">
                     <li>
@@ -64,11 +89,14 @@ MiU 1206 -->
                         <input type="checkbox" name="day" value="Sunday" id="Sunday" />
                     </li>
                 </ul>
+                </div>
                 <!-- Priority Meter -->
+                <div data-role="fieldcontain">
                 <h2>Priority Meter:</h2>
                 <input type="range" name="points" min="1" max="10"
-                value="range" id="range" />
+                value="range" id="range"
                 <!-- Contact Info -->
+                <div data-role="fieldcontain">
                 <h2>Event Time/Day:</h2>
                 <ul>
                     <li>
@@ -110,24 +138,33 @@ MiU 1206 -->
                         <input type="text" name="phoneNumber" id="phoneNumber" placeholder="Phone Number" />
                     </li>
                     <li>
-                        <label for="email">Email</label>
+                        <label for="email">Email Address</label>
                         <input type="email" name="email" id="email" placeholder="Email" />
                     </li>
                 </ul>
+                </div>
                 <!-- Comments -->
                 <h2>Comments:</h2>
                 <label for="textBox"></label>
                 <textarea rows="10" cols="30" id="textBox" placeholder="Comments Here:"></textarea>
-            </fieldset>
+            </div>
             <!-- Buttons -->
             <input type="submit" id="saveEvent" value="Save Event" />
-            <a href="index.html" id="Home">Home</a>
-            <br />
+            <input type="Button" id="Home" value="Home" />            
         </form>
-        <script type="text/javascript" src="../Week1/JS/JSON.js"></script>
-        <script type="text/javascript" src="../Week1/JS/main.js"></script>
-        
-        
-    </body>
 
+			</div>
+	
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script> 
+       <script type="text/javascript" src="../Gold/js/JSON.js"></script>
+        <script type="text/javascript" src="../Gold/js/main.js"></script>
+        </body>
 </html>
+		
+		
+		
+
+		
+
+	
