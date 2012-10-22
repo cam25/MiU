@@ -79,6 +79,28 @@ var autoFillData = function (){
 	 
 };
 
+$(function) toggleControls(tag) {
+        switch (tag) {
+        case "on":
+            $("eventForm").css("display", "block");
+            $("clearStoredData").css("display", "block");
+            $("displayStoredData").css("display", "block");
+            //gE("addNew").style.display = "inline";
+            break;
+        case "off":
+            $("eventForm").css("display", "block");
+            $("clearStoredData").css("display", "block");
+            $("displayStoredData").css("display", "block");
+            //gE("addNew").style.display = "none";
+
+            break;
+        default:
+            return false;
+
+
+        }
+    }
+
 var editItem = function() {
         //Grab the data from our item from local storage.
         var value = localStorage.getItem(this.key);
@@ -170,7 +192,7 @@ var getImage = function(catName, makeOtherList) {
 var getData = function(){
 
 
-        
+        toggleControls("on");
         //write Data from Local Storage to the browser.
         var makeDiv = $("#display");
         makeDiv.attr("#items");
