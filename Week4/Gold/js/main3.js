@@ -1,6 +1,7 @@
 
      
 $(document).bind('pageinit', function(){
+$("#Home").fadeIn("slow";)
     
     var evform = $("#eventForm");
     evform.validate({
@@ -17,12 +18,13 @@ console.log(localStorage);
     
 });
 
-function gE(x) {
+
+$(function) gE(x) {
         var theElement = document.getElementById(x);
         return theElement;
     }
 
-function toggleControls(tag) {
+$(function) toggleControls(tag) {
         switch (tag) {
         case "on":
             gE("eventForm").style.display = "block";
@@ -44,7 +46,7 @@ function toggleControls(tag) {
         }
     }
     
-function storeData(key) {
+$(function) storeData(key) {
         //IF there is no key, this means this is a brand new item we need a new key.
         if (!key) {
 
@@ -98,23 +100,22 @@ function storeData(key) {
         //Grab the data from our item from local storage.
         var value = localStorage.getItem(this.key);
         var item = JSON.parse(value);
-        var saveLink = gE("saveEvent");
+        var saveLink = $("#saveEvent");
         //shows the form
-        toggleControls("off");
 
         //populate the form files with the current localStorage values
-        gE("select-choice-1").value = item.group[1];
-        gE("firstName").value = item.firstName[1];
-        gE("lastName").value = item.lastName[1];
-        gE("address").value = item.address[1];
-        gE("city").value = item.city[1];
-        gE("state").value = item.state[1];
-        gE("phoneNumber").value = item.phoneNumber[1];
-        gE("email").value = item.email[1];
+        $("#select-choice-1").value = item.group[1];
+        $("#firstName").value = item.firstName[1];
+        $("#lastName").value = item.lastName[1];
+        $("#address").value = item.address[1];
+        $("#city").value = item.city[1];
+        $("#state").value = item.state[1];
+        $("#phoneNumber").value = item.phoneNumber[1];
+        $("#email").value = item.email[1];
         //gE("timeOfEvent").value = item.timeEVent[1];
-        gE("mydate").value = item.date[1];
-        gE("textBox").value = item.textBox[1];
-        gE("range").value = item.iq[1];
+        $("#mydate").value = item.date[1];
+        $("#textBox").value = item.textBox[1];
+        $("#range").value = item.iq[1];
 
 //        if (gE("Monday").value == item.checkBox[1]) {
 //            gE("Monday").setAttribute("checked", "checked");
@@ -143,10 +144,10 @@ function storeData(key) {
 //        }
 
         //remove the initial listener from the input "save contact"       
-        saveLink.removeEventListener("click", storeData);
+        saveLink.off("click", storeData);
         //change submit button value to edit button
-        gE("saveEvent").value = "Edit Contact";
-        var editSubmit = gE("saveEvent");
+        $("#saveEvent").val() = "Edit Contact";
+        var editSubmit = $("#saveEvent");
         //save the key value established in this function as a property of the edit Submit event
         //editSubmit.addEventListener("click", validate);
         editSubmit.key = this.key;
@@ -170,27 +171,27 @@ function storeData(key) {
 
     function makeItemLinks(key, linksLi) {
         //add edit single item link
-        var editLink = document.createElement("a");
+        var editLink = $("<a>");
         editLink.href = "#";
         editLink.key = key;
         var editText = "Edit Event";
-        editLink.addEventListener("click", editItem);
-        editLink.innerHTML = editText;
-        linksLi.appendChild(editLink);
+        editLink.on("click", editItem);
+        editLink.html = editText;
+        linksLi.append(editLink);
 
         //add line break
-        var breakTag = document.createElement("br");
-        linksLi.appendChild(breakTag);
+        var breakTag = $("<br>");
+        linksLi.append(breakTag);
 
 
         //delete link
-        var deleteLink = document.createElement("a");
+        var deleteLink = $("<a>");
         deleteLink.href = "#";
         deleteLink.key = key;
         var deleteText = "Delete Event";
-        deleteLink.addEventListener("click", deleteItem);
-        deleteLink.innerHTML = deleteText;
-        linksLi.appendChild(deleteLink);
+        deleteLink.on("click", deleteItem);
+        deleteLink.html = deleteText;
+        linksLi.append(deleteLink);
 
     }
 
